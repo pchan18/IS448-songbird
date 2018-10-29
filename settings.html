@@ -43,25 +43,22 @@
  <div class="main">
  
   <h1><u> Settings </u></h1>
-   <form name ="profile_pic" action = "settings.php" method = "POST">
+   <form name ="profile_pic" action = "profile.html" method = "POST">
    <label>
    Profile Picture:
    <input id="fileupload" type="file" name="profile_pic">
    </label>
    <br><br><br>
-   <form name = "background_color" action = "settings.php" method = "POST">
    <label>
    Background Color:
    <input type="color" id="color" name="bgcolor"/>
    </label>
      <br><br><br>
-   <form name = "text_color" action = "settings.php" method = "POST">
    <label>
     Text Color: 
     <input type="color" id="color" name="txtcolor"/>
    </label>
     <br><br><br>
-   <form name = "background_image" action = "settings.php" method = "POST">
    <label>
     Background Image: <select name = "bgimage">
      <option value = "cat"> Cat </option>
@@ -70,7 +67,6 @@
     </select>
    </label>
     <br><br><br>
-   <form name = "font_type" action = "settings.php" method = "POST">
    <label>
     Font Type: <select name = "fonttype">
      <option value = "serif"> Serif </option>
@@ -79,7 +75,7 @@
     </select>
    </label>
    <br><br><br>
-   <input type="button" id="submitButton" value="Apply"/>
+   <input type="submit" value="Apply" />
    <!-- <input type="button" value = "change" onclick="process()"/> -->
  </div>
   
