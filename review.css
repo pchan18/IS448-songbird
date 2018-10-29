@@ -1,0 +1,135 @@
+body{
+	
+	background-image: url("images/FrontPage.png");
+	background-size: 1080px 1080x;
+	font-family: 'Open Sans', sans-serif;
+}
+.link {
+color:black;
+text-decoration:underline;
+}
+
+
+.p{
+	color: black;
+	margin-left:3%;
+	background-color:white;
+	padding-left: 20px;
+	
+}
+.navBar{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left:0;
+	padding-right: 1%;
+	background-color: black;
+	position: fixed;
+	top:0;
+	right:0;
+	left:0;
+	color: white;
+	z-index:5;
+	display:inline;
+}
+
+.sideHead{
+	margin-right: 80%;
+	padding-left: 2%;
+	padding-top: 5px;
+	padding-right: 2%;
+	background-color: black;
+	font-size: 14px;
+	position: fixed;
+	left:0;
+	top:10%;
+	bottom: 40px;
+	color: white;
+	text-align:right;
+}
+
+.main{
+	background-color:white;
+	margin-left: 8%;
+	margin-top:2%;
+	padding:2%;
+	margin-bottom:0;
+	margin-right:0;
+	height:800px;
+	width:1000;
+	padding-top:1%;
+	bottom:sticky;
+}
+
+
+.navBtn{
+	padding: 3px;
+	padding-bottom:0;
+	margin-left:0;
+	font-size: 22px;
+	background-color:black;
+	border: 5px white solid;
+	border-radius: 5px;
+	color: white;
+	font-family: 'Teko', sans-serif;
+}
+.navBtn:hover, a.nav:hover{
+	background-color: black; 
+	color: #F4AA29;
+	border-color:  #F4AA29;
+	
+}
+.currentBtn{
+	margin-left:0;
+	padding: 3px;
+	padding-bottom:0;
+	font-size: 22px;
+	background-color:black;
+	border: 5px #F4AA29 solid;
+	border-radius: 5px;
+	color: #F4AA29;
+	font-family: 'Teko', sans-serif;
+}
+
+#navLogo{
+	left:0;
+	margin-right:68%;
+	margin-left:2%;
+	padding-top: 2px;
+}
+
+h1{
+	text-decoration:underline;
+	margin-top:2%; 
+	margin-left:2%;
+}
+h2{
+	margin-left:8%;
+}
+
+.main u:after {
+    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+}
+
+.img
+{
+	width:150px;
+	height:150px;
+	padding:1%;
+	border:3px black solid;
+	margin-left: 2%;
+	float: left;
+}
+
+.form{
+ margin-left:2%;
+	margin-top:5%;
+	height: 200px;
+	width:1000;
+	
+}
+
+.rating
+{width: 90px;
+height:10px;
+padding:10px;
+}
