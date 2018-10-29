@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* CSS Document */
+
+a{
+	color: white;
+}
+
+#logo{
+	background-color: white;
+	padding: 12px;
+}
+
+h1{
+	font-family: 'Teko';
+	font-style: 'bold';
+	font-size: 70pt;
+	margin-top: -30pt;
+	margin-bottom: -30pt;
+	padding: 15px;
+}
+
+labels{
+	font-size: 'Open Sans', sans-serif;
+}
+
+.container{
+	background-color: orange;
+	margin: 220px;
+	padding: 30px;
+	padding-top: 50px;
+	margin-top: 50px;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 10px;
+	align: center;
+}
+
+button{
+	font-size: 22px;
+	padding-left:50px;
+	align:center;
+	padding-right:50px;
+	background-color:gray;
+	border: 5px white solid;
+	border-radius: 20px;
+	color: white;
+	font-family: 'Teko', sans-serif;
+}
+
+.navBtn{
+	padding: 3px;
+	padding-bottom:0;
+	margin-left:0;
+	font-size: 22px;
+	background-color:black;
+	border: 5px white solid;
+	border-radius: 5px;
+	color: white;
+	font-family: 'Teko', sans-serif;
+}
+.navBtn:hover, a.nav:hover{
+	background-color: black; 
+	color: #F4AA29;
+	border-color:  #F4AA29;
+	
+}
+.currentBtn{
+	margin-left:0;
+	padding: 3px;
+	padding-bottom:0;
+	font-size: 22px;
+	background-color:black;
+	border: 5px #F4AA29 solid;
+	border-radius: 5px;
+	color: #F4AA29;
+	font-family: 'Teko', sans-serif;
+}
+
+.navBar{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left:0;
+	padding-right: 1%;
+	background-color: black;
+	position: fixed;
+	top:0;
+	right:0;
+	left:0;
+	color: white;
+	z-index:5;
+	display:inline;
+}

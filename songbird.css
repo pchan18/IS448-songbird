@@ -1,0 +1,45 @@
+html {
+    background-color: #F4AA29;
+}
+
+body {
+	font-family: 'Open Sans';
+    text-align: center;
+	padding: 10px;
+}
+
+input[type="submit"] {
+    font-size: 2em;
+    width: 10%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #F4AA29;
+}
+
+img {
+    position: absolute;
+    right: 30px;
+    width: 30px;
+    padding: 8px;
+}
