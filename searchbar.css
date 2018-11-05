@@ -30,7 +30,7 @@ body{
 	position: fixed;
 	left:0;
 	top:10%;
-	bottom: 40px;
+	bottom: 0;
 	color: white;
 	text-align:right;
 }
@@ -38,12 +38,10 @@ body{
 .main{
 	background-color:white;
 	margin-left: 8%;
-	margin-top:2%;
 	padding:2%;
 	margin-bottom:0;
 	margin-right:0;
-	height:400px;
-	width:1000;
+	height:700px;
 	padding-top:1%;
 	color: black;
 	bottom:sticky;
@@ -144,12 +142,10 @@ h2{
 }
 .searchbtn:hover
 {
-  padding: 2px;
-  width: 80px;
 }
 .form{
  margin-left:8%;
-	margin-top:5%;
+	margin-top:2%;
 	background-color: black;
 	height: 200px;
 	width:1000;
