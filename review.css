@@ -106,9 +106,6 @@ h2{
 	margin-left:8%;
 }
 
-.main u:after {
-    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
-}
 
 .img
 {
