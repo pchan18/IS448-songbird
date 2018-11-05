@@ -27,7 +27,7 @@ body{
 	position: fixed;
 	left:0;
 	top:10%;
-	bottom: 40px;
+	bottom: 0;
 	color: white;
 	text-align:right;
 }
@@ -97,6 +97,7 @@ button{
 }
 h1{
 	text-decoration:underline;
+	padding:10px;
 	color:white;
 	background-color:black;
 }
