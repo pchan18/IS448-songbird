@@ -1,10 +1,9 @@
-html {
-    background-color: #F4AA29;
-}
-
 body {
-	font-family: 'Open Sans';
-    text-align: center;
+	background-image: url("images/FrontPage.png");
+	background-size: 1080px 400px;
+	font-family: 'Open Sans', sans-serif;
+    	text-align: center;
+	color: white;
 	padding: 10px;
 }
 
@@ -42,4 +41,8 @@ img {
     right: 30px;
     width: 30px;
     padding: 8px;
+}
+
+.border {
+	background-color: black;
 }
