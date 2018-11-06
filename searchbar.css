@@ -104,10 +104,6 @@ h2{
 	margin-left:8%;
 }
 
-.main u:after {
-    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
-}
-
 .results{
 	float:left;
 	border:3px #F4AA29 solid;
@@ -142,6 +138,7 @@ h2{
 }
 .searchbtn:hover
 {
+	background-color:#F4AA29;
 }
 .form{
  margin-left:8%;
