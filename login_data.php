@@ -27,19 +27,13 @@
 		
 		$userName = mysqli_real_escape_string($db, $userName);
 		$password = mysqli_real_escape_string($db, $password);
-		
-		echo "<p>User wants to know about username $userName</p>";
 
 		#construct a query
 		#query should look like this: 
 		#select * from cars where car_name='accord';
 
-
 		$constructed_query = "SELECT * FROM `sb_user` WHERE uname = '$userName' AND pword = '$password'";
 		
-		#sanity check: print query to see if constructued query is correct
-		print("<h3>Sanity check print statement:</h3> The query is: $constructed_query</br>");
-
 		#Execute query
 		$result = mysqli_query($db, $constructed_query);
 	
@@ -52,12 +46,14 @@
 		}
 		
 		$num_rows = mysqli_num_rows($result);
-		print("<h3> Sanity check print statement:</h3> 
-			Number of rows returned for select query: $num_rows <br />");
 		
 		if ($num_rows == 0)
 		{
-			print("Sorry, your username and password are invalid");
+			print("<p>Sorry, your username and password are invalid</p>");
+			print("<p>Please ");
+			?><a href="login.php">go back</a>
+			<?php 
+			print(" and re-enter your information</p>");
 		}
 		else
 		{
@@ -65,17 +61,14 @@
 			#redirect to home page
 			header('Location: home.php'); 
 		}
-?>
-		<!--if program reaches this print statement, it means the query worked-->
-		<h3>Sanity check print statement:</h3> If this line is reached in the program, it means that the query worked
-		<br />
-		
-		<?php
 	
 	}
 	else{
-		echo "You must enter a username";
-		echo "Go back and do so!";
+		echo "You did not fill your information correctly";
+		print("<p>Please ");
+			?><a href="login.php">go back</a>
+			<?php 
+			print(" and re-enter your information</p>");
 	}
 
 	?>

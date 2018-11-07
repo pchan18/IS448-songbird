@@ -32,6 +32,7 @@
 					<input type="password" name="password" id="password" />
 				</dd>
 			</dl>
+			<p></p>
 			<input type="submit" value="Submit" />
 			<br/>
 			<input type="button" value="Create an Account" 
