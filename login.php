@@ -20,7 +20,7 @@
 			<!--<a href="home.html">Click to go back home</a>-->
 		</div>
 		<form name="register" id="register" 
-			action="home.php" method="POST">
+			action="login_data.php" method="POST">
 			<dl>
 				<dt>Username:</dt>
 				<dd>
