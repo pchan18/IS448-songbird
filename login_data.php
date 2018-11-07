@@ -63,6 +63,7 @@
 		{
 			###############################
 			#redirect to home page
+			header('Location: home.php'); 
 		}
 ?>
 		<!--if program reaches this print statement, it means the query worked-->
