@@ -1,3 +1,21 @@
+<?php
+//Note: Setting a cookie MUST occur before any other HTML code is processed/printed by the PHP code
+//if cookie by the name 'user' is set, then retrieve the name of user from cookie
+//and print welcome message
+if(isset($_COOKIE["user"]))
+{
+	$userName = $_COOKIE["user"];
+    
+}
+//else, if cookie is not set, it means the user is a first time visitor. 
+//so, set the cookie and print a welcome message
+else
+{
+    setcookie("user","$userName", time()+86400);
+    $userName = 'guest';
+        
+}
+?>
 <!DOCTYPE html>
 <!-- mypage.html first lab      -->
 <html lang="en">
@@ -59,6 +77,8 @@
 		{
 			###############################
 			#redirect to home page
+			setcookie("user","$userName", time()+86400);
+			$userName = 'guest';
 			header('Location: home.php'); 
 		}
 	
