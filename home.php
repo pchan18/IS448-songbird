@@ -12,7 +12,6 @@ else
 }
 ?>
 <!DOCTYPE html>
-<!-- mypage.html first lab      -->
 <html lang="en">
 <head>
 
@@ -31,8 +30,8 @@ else
 				Welcome <br/> <br/>
 				This is Songbird! <br /> <br />
 				Here you can rate albums from various artist and discover albums.<br /><br />
-				Find your new favorite song, album, or artist.
-				<!--Welcome <?php //echo getCookie['$userName'] ?> -->
+				Find your new favorite song, album, or artist. <br /><br />
+				Welcome <?php echo $userName ?>
 			</p>
 	
 	</div>
