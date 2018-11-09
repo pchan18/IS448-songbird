@@ -1,4 +1,16 @@
-
+<?php
+if(isset($_COOKIE["user"]))
+{
+	$userName = $_COOKIE["user"];
+    
+}
+else
+{
+	//redirects to login page when cookie not made
+    header('Location: login.php');
+        
+}
+?>
 <!DOCTYPE html>
 <!-- mypage.html first lab      -->
 <html lang="en">
@@ -20,6 +32,7 @@
 				This is Songbird! <br /> <br />
 				Here you can rate albums from various artist and discover albums.<br /><br />
 				Find your new favorite song, album, or artist.
+				<!--Welcome <?php //echo getCookie['$userName'] ?> -->
 			</p>
 	
 	</div>
