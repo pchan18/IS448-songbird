@@ -48,7 +48,51 @@
 			echo('Passwords do not match!');
 			return;
 		}
+		//This message prints if all checks have passed
 		echo("Registration successful. Welcome, $screen!");
+		
+		//connect to mysql database
+		$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
+		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
+		
+		//protecting against HTML injection
+		$fname = htmlspecialchars($_POST["fname"]);
+		$lname = htmlspecialchars($_POST["lname"]);
+		$email = htmlspecialchars($_POST["email"]);
+		$pword1 = htmlspecialchars($_POST["pword1"]);
+		$pword2 = htmlspecialchars($_POST["pword2"]);
+		$bday = htmlspecialchars($_POST["bday"]);		
+		$screen = htmlspecialchars($_POST["screen"]);
+		$comments = htmlspecialchars($_POST["comments"]);	
+
+		//protecting against SQL injection
+		$fname = mysqli_real_escape_string($db, $fname);
+		$lname = mysqli_real_escape_string($db, $lname);
+		$email = mysqli_real_escape_string($db, $email);
+		$pword1 = mysqli_real_escape_string($db, $pword1);
+		$pword2 = mysqli_real_escape_string($db, $pword2);
+		$bday = mysqli_real_escape_string($db, $bday);
+		$screen = mysqli_real_escape_string($db, $screen);
+		$comments = mysqli_real_escape_string($db, $comments);
+		
+		//SQL query to INSERT
+		$insert = "INSERT INTO sb_user (first_name, last_name, email, bday, pword, uname, comments)
+		VALUES ('$fname','$lname','$email','$bday','$pword2','$screen','$comments')";
+		
+		//execute query
+		$result = mysqli_query($db, $insert);
+		
+		#if result object is not returned, then print an error and exit the PHP program
+		if(! $result){
+			print("Error - insert could not be executed");
+			$error = mysqli_error($db);
+			print "<p> . $error . </p>";
+			exit;
+					}
+		else {
+			//sanity check: insert statement successful
+			echo("<p>Your information has been uploaded to the database successfully.</p>");
+		}
 		?>
 	</body>
 </html>
