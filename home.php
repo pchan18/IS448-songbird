@@ -41,6 +41,7 @@ else
 			<button class="sideBtn"><a class="side" href="submit.php">SUBMIT</a></button>
 			<button class="sideBtn"><a class="side" href="search.php">SEARCH</a></button>
 			<button class="sideBtn"><a class="side" href="profile.php">PROFILE</a></button>
+			<button class="sideBtn"><a class="side" href="logout.php">LOGOUT</a></button>
 	</div>
 	
 	<footer>
@@ -49,6 +50,7 @@ else
 		<button class="footerBtn"><a class="footer" href="submit.php"><span>SUBMIT</span></a></button>
 		<button class="footerBtn"><a class="footer" href="search.php"><span>SEARCH</span></a></button>
 		<button class="footerBtn"><a class="footer" href="profile.php"><span>PROFILE</span></a></button>
+		<button class="footerBtn"><a class="footer" href="logout.php"><span>LOGOUT</span></a></button>
 	</footer>
 
 
