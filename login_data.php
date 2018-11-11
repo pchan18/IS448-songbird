@@ -6,7 +6,7 @@ if(isset($_COOKIE["user"]))
 }
 else
 {
-		setcookie("user","userName", time()+86400);        
+		setcookie("user","userName", time()+3600);        
 }
 ?>
 <!DOCTYPE html>
