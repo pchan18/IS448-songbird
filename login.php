@@ -17,7 +17,6 @@
 	<div class="body">
 		<div class="head">
 			<h1>LOGIN</h1>
-			<!--<a href="home.html">Click to go back home</a>-->
 		</div>
 		<form name="register" id="register" 
 			action="login_data.php" method="POST">
@@ -26,7 +25,7 @@
 				<dd>
 					<input type="text" name="userName" id="userName" />
 				</dd>
-				<br \>
+				<br />
 				<dt>Password:</dt>
 				<dd>
 					<input type="password" name="password" id="password" />
