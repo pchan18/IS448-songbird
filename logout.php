@@ -1,5 +1,5 @@
 <?php
-setcookie("user" , 'userName' , time()-50000, '/');
-header("Location: login.php");
-exit;
+session_start();
+session_destroy();
+header('Location: login.php');
 ?>
