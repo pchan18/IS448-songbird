@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- mypage.html first lab      -->
 <html lang="en">
@@ -6,10 +5,12 @@
 
 		<meta http-equiv="Content-Type" content = "text/html; charset=utf-8"/>
         <title>Song Bird</title>
-		<link rel="stylesheet" type="text/css" href="home.css"/>
+		<link rel="stylesheet" type="text/css" href="home_search.css"/>
 		<link rel="stylesheet" type="text/css" href="searchbar.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+		
+		
 </head>
 
 <body>
@@ -22,21 +23,34 @@
 		<button class="currentBtn">SEARCH</button>
 		<button class="navBtn"><a class="nav" href="profile.php">PROFILE</a></button>
 	</div>
-
+<br/><br/>
 	<div class="sideHead">
 		<h1>Search</h1>
 	</div>
-	<br/>
-	<div>
-	<form class="form" action="musictype.php">
-	<h1> <span style="background-color:black">Keyword Search </span> </h1>
-		<input class="search" type="text" placeholder="Search" name="search">
+	
+	<div >
+	<form class="form" action="searchResults.php">
+	<h1> Search  </h1>
+	<h2>Seach by Title, Artist or User</h2>
+	
+		<input class="search" type="text" placeholder="Title" name="title"> <br/>
+		
+		<br/>
+		<input class="search" type="text" placeholder="Artist" name="artist"><br/>
+	
+		<br/>
+		<input class="search" type="text" placeholder="User" name="user">
+		<br/><br /><br /><br />
 		<button class="searchbtn"type="submit" name="submit"> Search</button>
+		<br/>
 	</form>
 	</div>
-	<div class="main">
+	<br/>
 	
-		<h1>Popular Searches</h1>
+
+	<div class="main">
+	<br /><br /><br /><br /><br /><br /><br />
+		<h1>Popular Title Searches</h1>
 		<h2>Browse Popular Searches</h2>
 		<br/>
 		<a class="results" href="search_results.html" > 
@@ -46,14 +60,13 @@
 		<a class="results" href="search_results.html">
 		<img  src="images/country.jpg" alt="country" style="width:100px; height:100;"/> <br/> Hot Country</a>
 		<br /><br /><br /><br /><br /><br /><br /><br /><br />
-		<h1>Popular Album Searches</h1>
+		<h1>Popular ArtistSearches</h1>
 		<h2>Browse Popular Searches</h2>
 		<img class="img" src="images/chainsmokers.jpg" alt="chainsmoker" Chainsmokers />
 		<img class="img" src="images/pink.jpg" alt="pink"/>
 		<img class="img" src="images/roses.png" alt="roses"/>
 		<img class="img" src="images/coldplay.jpg" alt="coldplay"/>
 	</div>
-	
 	
 
 </body>
