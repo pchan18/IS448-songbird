@@ -1,9 +1,10 @@
 
 body{
 	
-	background-image: url("images/FrontPage.png");
+	background-color: white;
 	background-size: 1080px 1080x;
 	font-family: 'Open Sans', sans-serif;
+	
 }
 .navBar{
 	padding-top: 5px;
@@ -38,26 +39,16 @@ body{
 .main{
 	background-color:white;
 	margin-left: 8%;
+	margin-top:2%;
 	padding:2%;
 	margin-bottom:0;
 	margin-right:0;
-	height:700px;
+	height:600px;
+	width:1000;
 	padding-top:1%;
-	color: black;
 	bottom:sticky;
 }
 
-button{
-	font-size: 22px;
-	padding-left:50px;
-	margin-left: 70px;
-	padding-right:50px;
-	background-color:gray;
-	border: 5px white solid;
-	border-radius: 20px;
-	color: white;
-	font-family: 'Teko', sans-serif;
-}
 
 .navBtn{
 	padding: 3px;
@@ -94,6 +85,12 @@ button{
 	margin-left:2%;
 	padding-top: 2px;
 }
+#navLogo{
+	left:0;
+	margin-right:68%;
+	margin-left:2%;
+	padding-top: 2px;
+}
 
 h1{
 	text-decoration:underline;
@@ -102,6 +99,10 @@ h1{
 }
 h2{
 	margin-left:8%;
+}
+
+.main u:after {
+    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
 }
 
 .results{
@@ -134,18 +135,22 @@ h2{
   width: 50%;
   background: #f1f1f1;
   margin-left:8%;
+  margin-bottom: 10px;
   
 }
-.searchbtn:hover
+.searchbtn
 {
-	background-color:#F4AA29;
+  padding: 2px;
+  width:80px;
+   margin-left:8%;
 }
 .form{
  margin-left:8%;
-	margin-top:2%;
-	background-color: black;
+	margin-top:5%;
+	background-color: white;
 	height: 200px;
 	width:1000;
+	
 	
 }
 
