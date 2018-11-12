@@ -9,15 +9,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
 </head>
 <body>
-	
-<ul>
-<img id="navLogo" src="images/SONGBIRD-WHITE.png"  alt ="White version of songbird logo" width="35" height = "35"/>
-  <li><a href="home.php">HOME</a></li>
-  <li><a href="review.php">REVIEW</a></li>
-  <li><a href="submit.php">SUBMIT</a></li>
-  <li><a href="search.php">SEARCH</a></li>
-  <li><a href="profile.php">PROFILE</a></li>
-</ul> 
 
 <div class="border">
 <h1>First, we need some information from you</h1>
