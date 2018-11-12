@@ -26,7 +26,7 @@
 			(isset($_POST["pword1"]) && (!empty($_POST["pword1"]))) &&
 			(isset($_POST["pword2"]) && (!empty($_POST["pword2"]))) &&			
 			(isset($_POST["screen"]) && (!empty($_POST["screen"]))) &&
-			(isset($_POST["comments"]) && (!empty($_POST["comments"]))) 
+			(isset($_POST["bio"]) && (!empty($_POST["bio"]))) 
 			)
 		{
 			$fname = $_POST["fname"];
@@ -36,7 +36,7 @@
 			$pword2 = $_POST["pword2"];
 			$bday = $_POST["bday"];		
 			$screen = $_POST["screen"];
-			$comments = $_POST["comments"];
+			$bio = $_POST["bio"];
 
 		}
 		else{
@@ -73,7 +73,7 @@
 		$pword2 = htmlspecialchars($_POST["pword2"]);
 		$bday = htmlspecialchars($_POST["bday"]);		
 		$screen = htmlspecialchars($_POST["screen"]);
-		$comments = htmlspecialchars($_POST["comments"]);	
+		$bio = htmlspecialchars($_POST["bio"]);	
 
 		//protecting against SQL injection
 		$fname = mysqli_real_escape_string($db, $fname);
@@ -83,11 +83,11 @@
 		$pword2 = mysqli_real_escape_string($db, $pword2);
 		$bday = mysqli_real_escape_string($db, $bday);
 		$screen = mysqli_real_escape_string($db, $screen);
-		$comments = mysqli_real_escape_string($db, $comments);
+		$bio = mysqli_real_escape_string($db, $bio);
 		
 		//SQL query to INSERT
-		$insert = "INSERT INTO sb_user (first_name, last_name, email, bday, pword, uname, comments)
-		VALUES ('$fname','$lname','$email','$bday','$pword2','$screen','$comments')";
+		$insert = "INSERT INTO sb_user (first_name, last_name, email, bday, pword, uname, bio)
+		VALUES ('$fname','$lname','$email','$bday','$pword2','$screen','$bio')";
 		
 		//execute query
 		$result = mysqli_query($db, $insert);
