@@ -1,19 +1,9 @@
 <?php
-if(isset($_COOKIE["user"]))
-{
-	$userName = $_COOKIE["user"];
-    
-}
-else
-{
-		setcookie("user","userName", time()+3600);        
-}
+session_start();
 ?>
 <!DOCTYPE html>
-<!-- mypage.html first lab      -->
 <html lang="en">
 <head>
-
 		<meta http-equiv="Content-Type" content = "text/html; charset=utf-8"/>
         <title>Song Bird</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -38,10 +28,6 @@ else
 		
 		$userName = mysqli_real_escape_string($db, $userName);
 		$password = mysqli_real_escape_string($db, $password);
-
-		#construct a query
-		#query should look like this: 
-		#select * from cars where car_name='accord';
 
 		$constructed_query = "SELECT * FROM `sb_user` WHERE uname = '$userName' AND pword = '$password'";
 		
@@ -68,10 +54,8 @@ else
 		}
 		else
 		{
-			###############################
 			#redirect to home page
-			setcookie("user","$userName", time()+86400);
-			$userName = 'guest';
+			$_SESSION['user']= $userName;
 			header('Location: home.php'); 
 		}
 	
