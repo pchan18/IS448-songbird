@@ -1,9 +1,7 @@
 
 <!DOCTYPE html>
-<!-- mypage.html first lab      -->
 <html lang="en">
 <head>
-
 		<meta http-equiv="Content-Type" content = "text/html; charset=utf-8"/>
         <title>Song Bird</title>
 		<link rel="stylesheet" type="text/css" href="home.css"/>
