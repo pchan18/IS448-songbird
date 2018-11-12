@@ -35,9 +35,7 @@ if (isset($_SESSION['user']) == FALSE){
 			<button class="sideBtn"><a class="side" href="submit.php">SUBMIT</a></button>
 			<button class="sideBtn"><a class="side" href="search.php">SEARCH</a></button>
 			<button class="sideBtn"><a class="side" href="profile.php">PROFILE</a></button>
-				<form action="logout.php">
-	<input type="submit" value="LOGOUT"/>
-	</form>
+			<button class="sideBtn"><a class="side" href="logout.php">LOGOUT</a></button>
 	</div>
 	
 	<footer>
