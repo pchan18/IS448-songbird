@@ -1,15 +1,9 @@
-<?php
-if(isset($_COOKIE["user"]))
-{
-	$userName = $_COOKIE["user"];
-    
-}
-else
-{
-	//redirects to login page when cookie not made
-    header('Location: login.php');
-        
-}
+<?php 
+session_start();
+//checking of user is logged in. If not, redirect to login page.
+if (isset($_SESSION['user']) == FALSE){
+     header("Location: login.php");
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +25,7 @@ else
 				This is Songbird! <br /> <br />
 				Here you can rate albums from various artist and discover albums.<br /><br />
 				Find your new favorite song, album, or artist. <br /><br />
-				Welcome <?php echo $userName ?>
+				Welcome <?php echo $_SESSION['user']; ?>
 			</p>
 	
 	</div>
@@ -41,7 +35,9 @@ else
 			<button class="sideBtn"><a class="side" href="submit.php">SUBMIT</a></button>
 			<button class="sideBtn"><a class="side" href="search.php">SEARCH</a></button>
 			<button class="sideBtn"><a class="side" href="profile.php">PROFILE</a></button>
-			<button class="sideBtn"><a class="side" href="logout.php">LOGOUT</a></button>
+				<form action="logout.php">
+	<input type="submit" value="LOGOUT"/>
+	</form>
 	</div>
 	
 	<footer>
@@ -52,7 +48,6 @@ else
 		<button class="footerBtn"><a class="footer" href="profile.php"><span>PROFILE</span></a></button>
 		<button class="footerBtn"><a class="footer" href="logout.php"><span>LOGOUT</span></a></button>
 	</footer>
-
 
 </body>
 
