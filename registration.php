@@ -21,7 +21,7 @@
 <p>New Password: <input type="password" name="pword1"/></p>
 <p>Confirm Password: <input type="password" name="pword2"/></p>
 <p>Screen Name: <input type="text" name="screen"/></p>
-<p>Comments: <textarea rows="10" cols="50" name="comments" id="comments">Tell us about yourself</textarea></p>
+<p>Bio: <textarea rows="10" cols="50" name="bio" id="bio">Tell us about yourself</textarea></p>
 <input type="submit" value="Submit" />
 <p></p>
 </form></div>
