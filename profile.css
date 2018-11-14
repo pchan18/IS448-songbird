@@ -19,18 +19,21 @@ body{
 }
 
 .main{
-	margin-left: 35%;
+	margin-left: 37%;
 	margin-top: 1%;
 	background-color:white;
 	float:right;
 	position:fixed;
 	padding: 2%;
+	height:450px;
 }
 
 .sideMain{
 	margin-left:10%;
 	margin-right: 64%;
 	margin-top:4%;
+	width:310px;
+	height:450px;
 	float:left;
 	background-color:#efca7a;
 	padding: 1%;
@@ -99,7 +102,7 @@ button:hover{
 
 #navLogo{
 	left:0;
-	margin-right:68%;
+	margin-right:63%;
 	margin-left:2%;
 	padding-top: 2px;
 }
