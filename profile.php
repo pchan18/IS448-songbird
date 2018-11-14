@@ -1,3 +1,17 @@
+<?php
+//ADD your session code here
+
+	session_start();
+	
+	if(!isset($_SESSION["user"])){
+		
+		header('Location: login.php'); 
+		
+	}
+	else{
+		$user = $_SESSION['user'];
+	}
+?>
 
 <!DOCTYPE html>
 <!-- mypage.html first lab      -->
@@ -14,6 +28,12 @@
 
 <body>
 
+	<?php
+		$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
+
+		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
+	?>
+
 	<div class="navBar">
 		<a href="home.php"><img id="navLogo" src="images/SONGBIRD-WHITE.png"  alt ="White version of songbird logo" width="35" height = "35"></a>
 		<button class="navBtn"><a class="nav" href="home.php">HOME</a></button>
@@ -21,6 +41,7 @@
 		<button class="navBtn"><a class="nav" href="submit.php">SUBMIT</a></button>
 		<button class="navBtn"><a class="nav" href="search.php">SEARCH</a></button>
 		<button class="currentBtn">PROFILE</button>
+		<button class="navBtn"><a class="nav" href="logout.php"><span>LOGOUT</span></a></button>
 	</div>
 
 	<div class="sideHead">
@@ -29,39 +50,92 @@
 	
 	<div class="sideMain">
 		<div class="user">
-			<h2>User1234</h2>
-			<span>Member since 10/10/10</span>
+			<h2><?php print "User: $user";?></h2>
+			
 		</div>
 		<img id="userImg"src="images/HackUMBC.Logo.Gold.png" width="200" height="200">
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et convallis leo. 
-				Phasellus eleifend hendrerit mi, nec tincidunt enim malesuada ornare. Sed commodo 
-				urna enim, non interdum dolor dapibus quis.
+		<?php
+			$constructed_query = "SELECT * FROM `sb_user` WHERE uname = '$user'";
+		
+			#Execute query
+			$result = mysqli_query($db, $constructed_query);
+		
+			#if result object is not returned, then print an error and exit the PHP program
+			if(! $result){
+				print("Error - query could not be executed");
+				$error = mysqli_error($db);
+				print "<p> . $error . </p>";
+				exit;
+			}
+			$row_array = mysqli_fetch_array($result);
+			
+			print("$row_array[bio]");
+		?>
 		</p>
 		<button><a href="settings.php">Settings</a></button>
 	</div>
 	<div class="main">
 	
-		<h1><u>Recent Activity</u></h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et convallis leo. 
-				Phasellus eleifend hendrerit mi, nec tincidunt enim malesuada ornare. Sed commodo 
-				urna enim, non interdum dolor dapibus quis. Quisque in urna dolor. Nunc fringilla
-				urna in imperdiet tempus. Mauris et mattis turpis. Praesent ultrices mi at tempus elementum.
-			</p>
 		<h1><u>Your Post</u></h1>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et convallis leo. 
-				Phasellus eleifend hendrerit mi, nec tincidunt enim malesuada ornare. Sed commodo 
-				urna enim, non interdum dolor dapibus quis. Quisque in urna dolor. Nunc fringilla
-				urna in imperdiet tempus. Mauris et mattis turpis. Praesent ultrices mi at tempus elementum.
+			<?php
+				$constructed_query = "SELECT * FROM `sb_review` WHERE user_profile = '$user'";
+			
+				#Execute query
+				$result = mysqli_query($db, $constructed_query);
+			
+				#if result object is not returned, then print an error and exit the PHP program
+				if(! $result){
+					print("Error - query could not be executed");
+					$error = mysqli_error($db);
+					print "<p> . $error . </p>";
+					exit;
+				}
+				
+				$num_rows = mysqli_num_rows($result);
+
+				if($num_rows == 0)
+				{
+					print("You have not made any posts yet");
+				}
+				else{
+					$row_array = mysqli_fetch_array($result);
+					
+					print("Song Title: $row_array[title] - ");
+					print("Artist: $row_array[artist] <br \>");
+					print("Post: $row_array[description]");
+				}
+			?>
 			</p>
 		<h1><u>Your Music</u></h1>	
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et convallis leo. 
-				Phasellus eleifend hendrerit mi, nec tincidunt enim malesuada ornare. Sed commodo 
-				urna enim, non interdum dolor dapibus quis. Quisque in urna dolor. Nunc fringilla
-				urna in imperdiet tempus. Mauris et mattis turpis. Praesent ultrices mi at tempus elementum.
+				<?php
+				$constructed_query = "SELECT * FROM `sb_followed` WHERE uname = '$user'";
+			
+				#Execute query
+				$result = mysqli_query($db, $constructed_query);
+			
+				#if result object is not returned, then print an error and exit the PHP program
+				if(! $result){
+					print("Error - query could not be executed");
+					$error = mysqli_error($db);
+					print "<p> . $error . </p>";
+					exit;
+				}
+				
+				$num_rows = mysqli_num_rows($result);
+
+				if($num_rows == 0)
+				{
+					print("You have not followed anything yet");
+				}
+				else{
+					$row_array = mysqli_fetch_array($result);
+					
+					print("Song: $row_array[followed_song]");
+				}
+			?>
 			</p>
 	</div>
 		
