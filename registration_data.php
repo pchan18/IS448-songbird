@@ -8,14 +8,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
   </head>
   <body>
-<ul>
-<img id="navLogo" src="images/SONGBIRD-WHITE.png"  alt ="White version of songbird logo" width="35" height = "35"/>
-  <li><a href="home.php">HOME</a></li>
-  <li><a href="review.php">REVIEW</a></li>
-  <li><a href="submit.php">SUBMIT</a></li>
-  <li><a href="search.php">SEARCH</a></li>
-  <li><a href="profile.php">PROFILE</a></li>
-</ul> 
 <div class="border">
 	<?php	
 
@@ -38,7 +30,7 @@
 		$numresult = mysqli_num_rows($result2);
 
 		if($numresult > 0){
-		echo "The username you entered already exists. Please enter a different one.";
+		echo "The username you entered already exists. <a href='registration.php'> Click here </a> to enter a different one.";
 		die();
 		}
 		else{
@@ -50,7 +42,7 @@
 		$numresult = mysqli_num_rows($result2);
 
 		if($numresult > 0){
-		echo "The email you entered already exists. Please enter a different one.";
+		echo "The email you entered already exists. <a href='registration.php'> Click here </a> to enter a different one.";
 		die();
 		}
 		else{
@@ -69,7 +61,7 @@
 		}
 		else{
 			echo "<p>You haven't entered all information in the form.
-			Please go back and re-enter.</p>";
+			<a href='registration.php'> Click here </a> to go back.</p>";
 			return;
 		}
 		//checking that there is an @ in the email address
@@ -77,13 +69,13 @@
 			
 		}
 		else {
-			echo "<p> You have not entered email address in correct form. It is either empty or is missing the @ symbol </p>"; 
+			echo "<p> You have not entered email address in correct form. It is either empty or is missing the @ symbol. <a href='registration.php'> Click here </a> to enter a different one. </p>"; 
 			return;
 		}
 		//checking that both passwords match
 		if($_POST['pword1'] != $_POST['pword2'])
 		{
-			echo('Passwords do not match!');
+			echo("Passwords do not match! <a href='registration.php'> Click here </a> to try again.");
 			return;
 		}
 		//This message prints if all checks have passed
