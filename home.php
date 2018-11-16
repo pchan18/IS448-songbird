@@ -21,11 +21,10 @@ if (isset($_SESSION['user']) == FALSE){
 	<div class="header">
 			<a href="home.php"><img id="headLogo" src="images/SONGBIRD-BLACK.png" alt="Black version of songbird logo" width="150" height = "150"></a>
 			<p>
-				Welcome <br/> <br/>
+				<b style="color:#F4AA29;">Welcome <?php echo $_SESSION['user']; ?></b><br/> <br/>
 				This is Songbird! <br /> <br />
 				Here you can rate albums from various artist and discover albums.<br /><br />
 				Find your new favorite song, album, or artist. <br /><br />
-				Welcome <?php echo $_SESSION['user']; ?>
 			</p>
 	
 	</div>
