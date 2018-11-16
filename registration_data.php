@@ -8,7 +8,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
   </head>
   <body>
-  
 <ul>
 <img id="navLogo" src="images/SONGBIRD-WHITE.png"  alt ="White version of songbird logo" width="35" height = "35"/>
   <li><a href="home.php">HOME</a></li>
@@ -19,6 +18,44 @@
 </ul> 
 <div class="border">
 	<?php	
+
+		$screen = $_POST["screen"];
+		$fname = $_POST["fname"];
+		$lname = $_POST["lname"];
+		$email = $_POST["email"];
+		$pword1 = $_POST["pword1"];
+		$pword2 = $_POST["pword2"];
+		$bday = $_POST["bday"];		
+		$bio = $_POST["bio"];
+
+		//connect to mysql database
+		$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
+		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
+
+		//Checks if username is taken
+		$checkifuserexists = 'SELECT uname FROM sb_user WHERE uname = "' . $screen . '" LIMIT 1';
+		$result2 = mysqli_query($db,$checkifuserexists);
+		$numresult = mysqli_num_rows($result2);
+
+		if($numresult > 0){
+		echo "The username you entered already exists. Please enter a different one.";
+		die();
+		}
+		else{
+		}
+
+		//Checks if email is taken
+		$checkifemailexists = 'SELECT email FROM sb_user WHERE email = "' . $email . '" LIMIT 1';
+		$result2 = mysqli_query($db,$checkifemailexists);
+		$numresult = mysqli_num_rows($result2);
+
+		if($numresult > 0){
+		echo "The email you entered already exists. Please enter a different one.";
+		die();
+		}
+		else{
+		}
+
 		if ((isset($_POST["fname"]) && (!empty($_POST["fname"]))) &&
 			(isset($_POST["lname"]) && (!empty($_POST["lname"]))) &&
 			(isset($_POST["email"]) && (!empty($_POST["email"]))) &&
@@ -27,21 +64,12 @@
 			(isset($_POST["pword2"]) && (!empty($_POST["pword2"]))) &&			
 			(isset($_POST["screen"]) && (!empty($_POST["screen"]))) &&
 			(isset($_POST["bio"]) && (!empty($_POST["bio"]))) 
-			)
+			) 
 		{
-			$fname = $_POST["fname"];
-			$lname = $_POST["lname"];
-			$email = $_POST["email"];
-			$pword1 = $_POST["pword1"];
-			$pword2 = $_POST["pword2"];
-			$bday = $_POST["bday"];		
-			$screen = $_POST["screen"];
-			$bio = $_POST["bio"];
-
 		}
 		else{
 			echo "<p>You haven't entered all information in the form.
-			Please go back and re-enter</p>.";
+			Please go back and re-enter.</p>";
 			return;
 		}
 		//checking that there is an @ in the email address
@@ -60,10 +88,6 @@
 		}
 		//This message prints if all checks have passed
 		echo("Registration successful. Welcome, $screen!");
-		
-		//connect to mysql database
-		$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
-		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 		
 		//protecting against HTML injection
 		$fname = htmlspecialchars($_POST["fname"]);
