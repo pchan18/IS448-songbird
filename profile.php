@@ -14,7 +14,6 @@
 ?>
 
 <!DOCTYPE html>
-<!-- mypage.html first lab      -->
 <html lang="en">
 <head>
 

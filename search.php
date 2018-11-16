@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?php
+//ADD your session code here
+
+	session_start();
+	
+	if(!isset($_SESSION["user"])){
+		
+		header('Location: login.php'); 
+		
+	}
+	else{
+		$user = $_SESSION['user'];
+	}
+?><!DOCTYPE html>
 <!-- mypage.html first lab      -->
 <html lang="en">
 <head>
