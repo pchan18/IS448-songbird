@@ -8,8 +8,8 @@ body {
 }
 
 input[type="submit"] {
-    font-size: 2em;
-    width: 10%;
+    font-size: 16px;
+    width: 5%;
 }
 
 ul {
@@ -45,4 +45,21 @@ img {
 
 .border {
 	background-color: black;
+}
+
+.sideBtn{
+    background-color: white;
+    border: 5px black solid;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    font-family: 'Teko', sans-serif;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.sideBtn:hover, .side:hover{
+    background-color: black; 
+    color: #F4AA29;
+    border-color:#F4AA29;
 }
