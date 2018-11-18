@@ -9,7 +9,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
 </head>
 <body>
-
+	<div class="sideBar">
+			<button class="sideBtn"><a class="side" href="login.php">LOGIN</a></button>
+	</div>
 <div class="border">
 <h1>First, we need some information from you</h1>
 
