@@ -11,6 +11,7 @@ a{
 }
 
 h1{
+	text-decoration:underline;
 	font-family: 'Teko';
 	font-style: 'bold';
 	font-size: 70pt;
@@ -88,4 +89,9 @@ button{
 	color: white;
 	z-index:5;
 	display:inline;
+	
+}
+
+span{
+	display: inline;
 }

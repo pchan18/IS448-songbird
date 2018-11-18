@@ -1,9 +1,10 @@
 body{
 	
-	/*background-size: 1080px 1080x;*/
 	font-family: 'Open Sans', sans-serif;
 	margin-top: 100px;
-	color: white;
+	color: black;
+	text-align: right;
+	padding: 15px;
 }
 
 p.post {
@@ -13,6 +14,7 @@ p.post {
 	padding: 5px;
 	background-color: gray;
 	border-radius: 0px 12px 12px 0px;	
+	text-align: left;
 }
 
 .link {
@@ -44,15 +46,10 @@ text-decoration:underline;
 }
 
 .sideHead{
-	margin-right: 80%;
-	padding-left: 2%;
-	padding-top: 5px;
-	padding-right: 2%;
 	background-color: black;
-	font-size: 14px;
 	position: fixed;
 	left:0;
-	top:10%;
+	top:5%;
 	bottom: 0;
 	color: white;
 	text-align:right;
@@ -110,8 +107,11 @@ text-decoration:underline;
 
 h1{
 	text-decoration:underline;
-	margin-top:3%; 
-	margin-left:2%;
+	font-family: 'Teko';
+	font-size: 70pt;
+	margin-bottom: -30pt;
+	transform: rotate(270deg);
+	margin-top:100px;
 }
 h2{
 	margin-left:8%;
@@ -140,10 +140,7 @@ height:10px;
 padding:10px;
 }
 
-right{
-	float: right;
-	color: black;
-}
+
 
 .header{
 	margin-right: 95%;
@@ -234,30 +231,9 @@ a{
 	text-decoration:none;
 }
 
-#footerLogo{
-	left:0;
-	padding-right:65%;
-	padding-top: 2px;
-}
-#headLogo{
-	background-color: white;
-}
-p{
-	color: white;
-	background-color: black;
-	text-align:left;
-	padding-left: 5px;
-}
-h1{
-	color: #F4AA29;
-}
 .topHeader{
 	margin-left: 20%;
 	background-color:white;
 	padding: 5px;
 }
 
-#register{
-	margin-left: 25%;
-	background-color:white;
-}

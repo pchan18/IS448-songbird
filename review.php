@@ -19,7 +19,6 @@
 
 		<meta http-equiv="Content-Type" content = "text/html; charset=utf-8"/>
         <title>Song Bird</title>
-		<!--<link rel="stylesheet" type="text/css" href="home.css"/>-->
 		<link rel="stylesheet" type="text/css" href="review.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
@@ -34,6 +33,7 @@
 		<button class="navBtn"><a class="nav" href="submit.php">SUBMIT</a></button>
 		<button class="navBtn"><a class="nav" href="search.php">SEARCH</a></button>
 		<button class="navBtn"><a class="nav" href="profile.php">PROFILE</a></button>
+		<button class="navBtn"><a class="nav" href="logout.php"><span>LOGOUT</span></a></button>
 	</div>
 	
 	<div class="sideHead">
@@ -105,8 +105,9 @@
 
 	} else {
 		$statement ="Please fill out all the information in order to make a post.";
-	}
 		print ("$statement");
+	}
+		
 	
 ?>
 	
