@@ -16,7 +16,7 @@
 		<button class="navBtn"><a class="nav" href="home.php">HOME</a></button>
 		<button class="navBtn"><a class="nav" href="review.php">REVIEW</a></button>
 		<button class="navBtn"><a class="nav" href="submit.php">SUBMIT</a></button>
-		<button class="currentBtn">SEARCH</button>
+		<button class="currentBtn"><a class="nav" href="search.php">SEARCH</a></button>
 		<button class="navBtn"><a class="nav" href="profile.php">PROFILE</a></button>
 		<button class="navBtn"><a class="nav" href="logout.php">LOGOUT</a></button>
 	</div>
@@ -25,14 +25,14 @@
 		<h1><a href= https://swe.umbc.edu/~mrobe1/is448/project/search.php>Search</a></h1>
 	</div>
 	
-	
+	<div class="main">
 <?php
 //connect to database
 $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 if(!$db) exit("Error - could not select database");
 
 ?>
-<button class="followBtn"><a href="follow.php"></a>Follow</button>
+<button class="followBtn"><a class="follow" href="follow.php">Follow</a></button>
 <?php
 
 	
@@ -105,7 +105,7 @@ if(!$db) exit("Error - could not select database");
 	}
 	
 	?>
-	
+	</div>
 </body>
 
 </html>

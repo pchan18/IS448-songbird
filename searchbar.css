@@ -62,6 +62,12 @@ body{
 	text-align:center;
 	font-family: 'Teko', sans-serif;
 }
+a.follow{
+	color:gray;
+}
+.follow:hover{
+	color:white;
+}
 
 .followBtn:hover{
 	background-color:gray;
