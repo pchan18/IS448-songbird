@@ -1,7 +1,7 @@
 body{
 	
 	background-image: url("images/FrontPage.png");
-	background-size: 1080px 400px;
+	background-size: cover;
 	font-family: 'Open Sans', sans-serif;
 	
 }
