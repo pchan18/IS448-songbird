@@ -1,3 +1,18 @@
+<?php
+//ADD your session code here
+
+	session_start();
+	
+	if(!isset($_SESSION["user"])){
+		
+		header('Location: login.php'); 
+		
+	}
+	else{
+		$user = $_SESSION['user'];
+	}
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -17,37 +32,41 @@
 <button class="navBtn"><a class="nav" href="profile.php">PROFILE</a></button>
 </div>
 <div class="container">
-<h1>SUBMIT</h1>
-<fieldset>
-<legend>Share your thoughts</legend>
-<form name="customForm" action="reviews.php" method="POST">
-Album Cover
-<br/>
-<img id="logo" src="images/SONGBIRD-BLACK.png" alt ="White version of songbird logo as filler " width="200" height = "200" >
-<br/>
-<input type="submit" id="uploard file" value="Upload"/>
-<br/>
-<dl>
-<dt>Album Title:</dt>
-<dd><input type = "text" name="title" size = "50" /></dd>
-<dt>Artist:</dt>
-<dd><input type = "text" name="artist" size = "50" /></dd>
-<dt>Writer </dt>
-<dd><input type = "text" name="writer" size = "50" /></dd>
-<dt>Year Released</dt>
-<dd><input type = "text" name="release" size = "5" /></dd>
-<dt>Rating</dt>
-<dd><input type = "number" name="rating" size = "" /></dd>
-<dt>Description</dt>
-<dd><textarea rows="6" cols="50" name="description" id="comments">
-Enter your review here
-</textarea>
-</dd>
-<dt>Tags</dt><dd><input type = "text" name="tags" size = "50" /></dd>
-</dl>
-<input type="submit" id="submitButton" value="Submit"/>
-</form>
-</fieldset>
+	<h1>SUBMIT</h1>
+		<fieldset>
+		<legend>Share your thoughts</legend>
+		<form name="customForm" action="review.php" method="POST">
+			Album Cover
+				<br/>
+					<img id="logo" src="images/SONGBIRD-BLACK.png" alt ="White version of songbird logo as filler " width="200" height = "200" >
+					<br/>
+					<input type="submit" id="upload file" value="Upload"/>
+				<br/>
+			<dl>
+				<dt>User: </dt>
+					<dd><input type = "text" name="user_profile" placeholder="Username" size = "50" /></dd>
+				<dt>Album Title: </dt>
+					<dd><input type = "text" name="title" placeholder="Album Title" size = "50" /></dd>
+				<dt>Artist: </dt>
+					<dd><input type = "text" name="artist" placeholder="Artist" size = "50" /></dd>
+				<dt>Genre: </dt>
+					<dd><input type = "text" name="genre" placeholder="Genre" size = "50" /></dd>
+				<dt>Date Released: </dt>
+					<dd><input type = "date" name="date_released"/></dd>
+				<dt>Rating: </dt>
+					<dd><input type = "number" name="rating" /></dd>
+				<dt>Description:</dt>
+					<dd>
+						<textarea rows="6" cols="50" name="description" placeholder="Enter your review here" id="comments"></textarea>
+					</dd>
+				<dt>Tags</dt>
+					<dd><input type = "text" name="tags" placeholder="tags" size = "50" /></dd>
+			</dl>
+			<input type="submit" id="submitButton" value="Submit"/>
+		</form>
+		</fieldset>
 </div>
 </body>
 </html>
+
+
