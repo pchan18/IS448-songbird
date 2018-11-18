@@ -41,6 +41,7 @@
 	</div>
 	
 	<?php
+	
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 
 	if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
@@ -71,9 +72,8 @@
 		$constructed_query = "INSERT INTO sb_review(user_profile, title, artist, date_released, description, rating, genre, date_of_post, tags) VALUES ('$user_profile', '$title', '$artist', '$date_released', '$description', '$rating', '$genre', '$date_of_post', '$tags')";
 		
 		$result = mysqli_query($db, $constructed_query);
-	};
 		
-	$retrieve_query = "SELECT * FROM sb_review";
+		$retrieve_query = "SELECT * FROM sb_review";
 		
 	$result = mysqli_query($db, $retrieve_query);
 	$num_rows = mysqli_num_rows($result);
@@ -87,15 +87,15 @@
 	<p class=post>
 	<?php
 		
-		print ("<b>$row_array[0]</b><br/><br/>");
-		print ("$row_array[1]<br/><br/>");
-		print ("$row_array[2]<br/><br/>");
-		print ("$row_array[3]<br/><br/>");
-		print ("$row_array[4]<br/><br/>");
-		print ("$row_array[5]<br/><br/>");
-		print ("$row_array[6]<br/><br/>");
-		print ("$row_array[7]<br/><br/>");
-		print ("&nbsp;&nbsp; tags: $row_array[8]<br/>");
+		print ("User <b>$row_array[0]</b> wrote a review: <br/>");
+		print ("Album: <b>$row_array[1]</b> ");
+		print ("Artist: <b>$row_array[2]</b><br/>");
+		print ("Release Date: <b>$row_array[3]</b><br/>");
+		print ("Review: <br/><br/>$row_array[4]<br/><br/>");
+		print ("Rating: <b>$row_array[5]</b> ");
+		print ("Genre: <b>$row_array[6]</b><br/>");
+		print ("Review created on: <b>$row_array[7]</b><br/>");
+		print ("&nbsp;&nbsp; tags: <b>$row_array[8]</b><br/>");
 				
 	?>
 	</p>
@@ -104,45 +104,15 @@
 		
 	};
 
-
+	} else {
+		$statement ="Please fill out all the information in order to make a post.";
+	}
+		print ("$statement");
+	
 ?>
 	
 	<a href="submit.php">Click here to make blog posts.</a>
-<!--
-	
-	
-	
-	<div class="main">
-		<h1><u>Chainsmokers - Do Not Open An Honest Review</u></h1>
-		<img class="img" src="images/chainsmokers.jpg" width="200" height="200">
-<br/>		
-		<p class="p">
 
-		
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, 
-		nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec 
-		congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis 
-		sed ornare eu, lobortis in odio. Praesent convallis 
-		urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...
-		</p>
-		<br/>
-		<p class="p">A review by: <a class="link" href="profile">User</a>
-			<br/>
-			Tags:
-			<br/>
-			Rating: ⋆⋆⋆⋆
-		</p>
-		<h1><u>Comment</u></h1>
-			<p>
-			<form class="form" name="comment" id="form" action="">
-			<textarea class="" rows="4" cols="50" placeholder="Leave a Comment" name="comment"></textarea>
-			<br />
-			<button type="submit" value="Submit">Submit</button>
-			</p>
-			
-		</form>
-	</div>
-		-->
 </body>
 
 </html>
