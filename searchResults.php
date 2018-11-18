@@ -18,12 +18,13 @@
 		<button class="navBtn"><a class="nav" href="submit.php">SUBMIT</a></button>
 		<button class="currentBtn">SEARCH</button>
 		<button class="navBtn"><a class="nav" href="profile.php">PROFILE</a></button>
+		<button class="navBtn"><a class="nav" href="logout.php"><span>LOGOUT</span></a></button>
 	</div>
 
 	<div class="sideHead">
 		<h1><a href= https://swe.umbc.edu/~mrobe1/is448/project/search.php>Search</a></h1>
 	</div>
-	
+	<div class="main">
 	
 <?php
 //connect to database
@@ -85,6 +86,8 @@ if(!$db) exit("Error - could not select database");
 	}
 	
 	?>
+	
+	</div>
 	
 </body>
 
