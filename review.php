@@ -48,7 +48,6 @@
 
 	if ((isset($_POST['artist'])  && !empty($_POST['artist'])) && (isset($_POST['description'])  && !empty($_POST['description'])) && (isset($_POST['genre'])  && !empty($_POST['genre'])) && (isset($_POST['rating'])  && !empty($_POST['rating'])) &&(isset($_POST['tags'])  && !empty($_POST['tags'])) && (isset($_POST['title'])  && !empty($_POST['title'])) && (isset($_POST['user_profile'])  && !empty($_POST['user_profile'])) &&(isset($_POST['date_released'])  && !empty($_POST['date_released']))) 
 	{
-		print ("did you get here?");
 		$artist = htmlspecialchars($_POST['artist']);
 		$description = htmlspecialchars($_POST['description']);
 		$genre = htmlspecialchars($_POST['genre']);
