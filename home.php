@@ -30,7 +30,7 @@ if (isset($_SESSION['user']) == FALSE){
 	</div>
 	
 	<div class="sideBar">
-			<button class="sideBtn"><a class="side" href="review.php">REVIEW</a></button>
+			<button class="sideBtn"><a class="side" href="justreviews.php">REVIEW</a></button>
 			<button class="sideBtn"><a class="side" href="submit.php">SUBMIT</a></button>
 			<button class="sideBtn"><a class="side" href="search.php">SEARCH</a></button>
 			<button class="sideBtn"><a class="side" href="profile.php">PROFILE</a></button>
@@ -39,7 +39,7 @@ if (isset($_SESSION['user']) == FALSE){
 	
 	<footer>
 		<img id="footerLogo" src="images/SONGBIRD-WHITE.png"  alt ="White version of songbird logo" width="25" height = "25">
-		<button class="footerBtn"><a class="footer" href="review.php"><span>REVIEW</span></a></button>
+		<button class="footerBtn"><a class="footer" href="justreviews.php"><span>REVIEW</span></a></button>
 		<button class="footerBtn"><a class="footer" href="submit.php"><span>SUBMIT</span></a></button>
 		<button class="footerBtn"><a class="footer" href="search.php"><span>SEARCH</span></a></button>
 		<button class="footerBtn"><a class="footer" href="profile.php"><span>PROFILE</span></a></button>
