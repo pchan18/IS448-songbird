@@ -18,13 +18,13 @@
 		<button class="navBtn"><a class="nav" href="submit.php">SUBMIT</a></button>
 		<button class="currentBtn">SEARCH</button>
 		<button class="navBtn"><a class="nav" href="profile.php">PROFILE</a></button>
-		<button class="navBtn"><a class="nav" href="logout.php"><span>LOGOUT</span></a></button>
+		<button class="navBtn"><a class="nav" href="logout.php">LOGOUT</a></button>
 	</div>
 
 	<div class="sideHead">
 		<h1><a href= https://swe.umbc.edu/~mrobe1/is448/project/search.php>Search</a></h1>
 	</div>
-	<div class="main">
+	
 	
 <?php
 //connect to database
@@ -32,9 +32,7 @@ $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 if(!$db) exit("Error - could not select database");
 
 ?>
-
-	<button class="followBtn"><a href="follow.php"></a>Follow</button>
-
+<button class="followBtn"><a href="follow.php"></a>Follow</button>
 <?php
 
 	
@@ -51,32 +49,51 @@ if(!$db) exit("Error - could not select database");
 	
 	if ((isset($_POST["title"]) && (!empty($_POST["title"])))) {
 			
-	//todo: write and execute the query to select from table sb_review TITLE
-	$selectTitle = "Select * FROM 'sb_review' WHERE 'title' LIKE '%$title%'";
-	//execute query
+//todo: write and execute the query to select from table sb_review TITLE
+	$selectTitle = "Select * FROM 'sb_review' WHERE title LIKE '%$title%'";
+
+//execute query
 	$resultTitle = mysql_query($db,$selectTitle);
-	print $resultTitle;
-	
-	if(mysql_num_rows($resultTitle) > 0){ // if one or more rows are returned do following
-             
-            while($results = mysql_fetch_array($raw_results)){
-	
-	
-                echo "<p><h3>".$results['title']."</h3></p>";
-			}
+	if($titleRows= mysql_num_rows($resultTitle) > 0){ // if one or more rows are returned do following
+             while ($row=mysql_fetch_array($resultTitle)){
+				echo "user: $row[user_profile]<br/>";
+				echo "artist: $row[artist]<br/>";
+				echo "title: $row[title]<br/>" ;
+			 }
+	}			 
+			
 	}
-	}
+	
 	
 	elseif	((isset($_POST["artist"]) && (!empty($_POST["artist"])))){
 	//todo: write and execute the query to select from table sb_review ARTIST
-	$selectArtist = "Select * FROM 'sb_review' WHERE 'artist' LIKE '%$artist%'";
+	$selectArtist = "Select * FROM 'sb_review' WHERE artist LIKE '%$artist%'";
 	$resultArtist = mysql_query($db,$selectArtist);
+		if($artistRows= mysql_num_rows($resultArtist) > 0){ // if one or more rows are returned do following
+             while ($row=mysql_fetch_array($resultArtist)){
+				echo "user: $row[user_profile]<br/>";
+				echo "artist: $row[artist]<br/>";
+				echo "title: $row[title]<br/>" ;
+			 }  
+		
 	}
+
+}
 		
 	elseif ((isset($_POST["user"]) && (!empty($_POST["user"])))){
 	//todo: write and execute the query to select from table sb_review USER
-	$selectUser= "Select * FROM 'sb_review' WHERE 'user' LIKE '%$user%'";
+	$selectUser= "Select * FROM 'sb_review' WHERE user_profile LIKE '%$user%'";
 	$resultUser = mysql_query($db,$selectUser);
+	
+	if($userRows= mysql_num_rows($resultUser) > 0){ // if one or more rows are returned do following
+             while ($row=mysql_fetch_array($resultUser)){
+				echo "user: $row[user_profile]<br/>";
+				echo "artist: $row[artist]<br/>";
+				echo "title: $row[title]<br/>" ;
+				
+			 }  
+			 }  
+			
 	}
 	
 	
@@ -88,8 +105,6 @@ if(!$db) exit("Error - could not select database");
 	}
 	
 	?>
-	
-	</div>
 	
 </body>
 
