@@ -19,7 +19,7 @@
 
 		<meta http-equiv="Content-Type" content = "text/html; charset=utf-8"/>
         <title>Song Bird</title>
-		<link rel="stylesheet" type="text/css" href="home.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="home.css"/>-->
 		<link rel="stylesheet" type="text/css" href="review.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
@@ -107,7 +107,7 @@
 
 ?>
 	
-	<a href="create_post.html">Click here to make blog posts.</a>
+	<a href="submit.php">Click here to make blog posts.</a>
 <!--
 	
 	

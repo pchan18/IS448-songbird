@@ -1,9 +1,20 @@
 body{
 	
-	background-image: url("images/FrontPage.png");
-	background-size: 1080px 1080x;
+	/*background-size: 1080px 1080x;*/
 	font-family: 'Open Sans', sans-serif;
+	margin-top: 100px;
+	color: white;
 }
+
+p.post {
+	border-left: 5px orange solid;
+	font-family: "Gotham", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+	margin: 25px 200px 0px 200px;
+	padding: 5px;
+	background-color: gray;
+	border-radius: 0px 12px 12px 0px;	
+}
+
 .link {
 color:black;
 text-decoration:underline;
@@ -121,11 +132,132 @@ h2{
 .form{
 	margin-left:2%;
 	margin-top:2%;
-	
 }
 
 .rating
 {width: 90px;
 height:10px;
 padding:10px;
+}
+
+right{
+	float: right;
+	color: black;
+}
+
+.header{
+	margin-right: 95%;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	background-color: black;
+	font-size: 14px;
+	position: fixed;
+	left:0;
+	top:0;
+	bottom: 40px;
+	color: white;
+	text-align:right;
+}
+.sideBar{
+	margin-left: 12%;
+	margin-right: 80%;
+	float:left;
+}
+
+footer{
+	text-align:right;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 2%;
+	background-color: black;
+	position: fixed;
+	bottom:0;
+	right:0;
+	left:0;
+	color: white;
+}
+
+.headerBtn{
+	border: 5px white solid;
+	margin-left: 5px;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 22px;
+	padding-right: 20px;
+	margin-bottom:5px;
+	background-color:black;
+	font-family: 'Teko', sans-serif;
+	color: #F4AA29;
+}
+.head{
+	color: #F4AA29;
+}
+
+.sideBtn:hover, .side:hover{
+	background-color: black; 
+	color: #F4AA29;
+	border-color:#F4AA29;
+}
+
+.headerBtn:hover,.head:hover{
+	background-color: black; 
+	color: white;
+	border-color:white;
+}
+.footerBtn:hover{
+	text-decoration:underline;
+}
+
+.sideBtn{
+	background-color: white;
+	border: 5px black solid;
+	border-radius: 5px;
+	margin-bottom: 3px;
+	font-family: 'Teko', sans-serif;
+	padding-left: 10px;
+	font-weight: bold;
+	font-size: 22px;
+}
+.side{
+	color:black;
+}
+.footerBtn{
+	padding: 5px;
+	font-size: 14px;
+	background-color:black;
+	border: 5px black solid;
+	color: white;
+}
+
+a{
+	text-decoration:none;
+}
+
+#footerLogo{
+	left:0;
+	padding-right:65%;
+	padding-top: 2px;
+}
+#headLogo{
+	background-color: white;
+}
+p{
+	color: white;
+	background-color: black;
+	text-align:left;
+	padding-left: 5px;
+}
+h1{
+	color: #F4AA29;
+}
+.topHeader{
+	margin-left: 20%;
+	background-color:white;
+	padding: 5px;
+}
+
+#register{
+	margin-left: 25%;
+	background-color:white;
 }

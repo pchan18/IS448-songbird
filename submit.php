@@ -54,7 +54,14 @@
 				<dt>Date Released: </dt>
 					<dd><input type = "date" name="date_released"/></dd>
 				<dt>Rating: </dt>
-					<dd><input type = "number" name="rating" /></dd>
+					<dd><select name="rating">
+						<option value=1>1</option>
+						<option value=2>2</option>
+						<option value=3>3</option>
+						<option value=4>4</option>
+						<option value=5>5</option>
+						</select>
+					</dd>
 				<dt>Description:</dt>
 					<dd>
 						<textarea rows="6" cols="50" name="description" placeholder="Enter your review here" id="comments"></textarea>
