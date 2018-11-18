@@ -35,6 +35,8 @@
 		<button class="navBtn"><a class="nav" href="submit.php">SUBMIT</a></button>
 		<button class="currentBtn">SEARCH</button>
 		<button class="navBtn"><a class="nav" href="profile.php">PROFILE</a></button>
+		<button class="navBtn"><a class="nav" href="logout.php">LOGOUT</a></button>
+
 	</div>
 <br/><br/>
 	<div class="sideHead">
