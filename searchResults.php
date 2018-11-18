@@ -33,6 +33,8 @@ if(!$db) exit("Error - could not select database");
 
 ?>
 
+	<button class="followBtn"><a href="follow.php"></a>Follow</button>
+
 <?php
 
 	
