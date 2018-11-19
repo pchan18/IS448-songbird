@@ -131,9 +131,9 @@
 					for($row_num = 1; $row_num <= $num_rows; $row_num++){
 						$row = mysqli_fetch_array($result);
 						
-						$follow_song = $row_array[$row_num]['followed_song'];
-						$follow_artist = $row_array['followed_artist'];
-						$follow_user = $row_array['followed_user'];
+						$follow_song = $row['followed_song'];
+						$follow_artist = $row['followed_artist'];
+						$follow_user = $row['followed_user'];
 						
 						if($follow_song != null)
 							echo("Song: $follow_song <br \>");
