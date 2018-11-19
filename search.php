@@ -40,31 +40,45 @@
 	</div>
 <br/><br/>
 	<div class="sideHead">
-		<h1>Search</h1>
+		<h1><a href= https://swe.umbc.edu/~mrobe1/is448/project/search.php>Search</a></h1>
 	</div>
 	
 	<div >
-	<form class="form" action="searchResults.php">
+	
+	
+	<hr>
+	<form class="form" method ="POST" action="titleResults.php">
 	<h1> Search  </h1>
-	<h2>Seach by Title, Artist or User</h2>
-	
-		<input class="search" type="text" placeholder="Title" name="title"> <br/>
-		
+	<h2>Seach by Title</h2>
+		<input class="search" type="text" placeholder="Title" name="title"> 
+	<br/><br/><br />
+		<button class="searchbtn" type="submit" name="submit"> Search</button>
 		<br/>
-		<input class="search" type="text" placeholder="Artist" name="artist"><br/>
-	
+	</form>
+	<br/>
+	<hr>
+	<form class="form" method ="POST" action="artistResults.php">
+	<h2>Seach by Artist</h2>
+		<input class="search" type="text" placeholder="Artist" name="artist">
+		<br/><br/><br />
+		<button class="searchbtn" type="submit" name="submit"> Search</button>
 		<br/>
+	</form>
+	<hr>
+	<form class="form" method ="POST" action="userResults2.php">
+	<h2>Seach by User</h2>
 		<input class="search" type="text" placeholder="User" name="user">
-		<br/><br /><br /><br />
-		<button class="searchbtn"type="submit" name="submit"> Search</button>
+		<br/><br/><br />
+		<button class="searchbtn" type="submit" name="submit"> Search</button>
 		<br/>
+
 	</form>
 	</div>
 	<br/>
 	
 
 	<div class="main">
-	<br /><br /><br /><br /><br /><br /><br />
+	<br /><br />
 		<h1>Popular Title Searches</h1>
 		<h2>Browse Popular Searches</h2>
 		<br/>
@@ -75,7 +89,7 @@
 		<a class="results" href="search_results.html">
 		<img  src="images/country.jpg" alt="country" style="width:100px; height:100;"/> <br/> Hot Country</a>
 		<br /><br /><br /><br /><br /><br /><br /><br /><br />
-		<h1>Popular ArtistSearches</h1>
+		<h1>Popular Artist Searches</h1>
 		<h2>Browse Popular Searches</h2>
 		<img class="img" src="images/chainsmokers.jpg" alt="chainsmoker" Chainsmokers />
 		<img class="img" src="images/pink.jpg" alt="pink"/>
