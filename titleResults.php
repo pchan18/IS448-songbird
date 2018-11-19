@@ -1,3 +1,27 @@
+<?php
+//ADD your session code here
+	session_start();
+	
+	if(!isset($_SESSION["user"])){
+		
+		header('Location: login.php'); 
+		
+	}
+	else{
+		$user = $_SESSION['user'];
+	}
+	
+	if(isset($_COOKIE["search_title"]))
+	{
+		setcookie("search_title","$_POST[title]", time()+86400);
+		$search_title = $_COOKIE["search_title"];
+	}
+	else
+	{
+		setcookie("search_title","$_POST[title]", time()+86400);
+		$search_title = $_POST["artist"];
+	}
+?>
 
 <html lang="en">
 <head>
@@ -32,7 +56,7 @@ $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 if(!$db) exit("Error - could not select database");
 
 ?>
-<button class="followBtn"><a href="follow.php"></a>Follow</button>
+<button class="followBtn"><a href="follow_title.php"></a>Follow</button>
 <?php
 
 	$title = $_POST["title"];
@@ -55,7 +79,7 @@ if(!$db) exit("Error - could not select database");
 	WHERE 'title' LIKE '%$title%' ";
 
 //execute query
-	$result = mysql_query($db,$selectTitle);
+	$result = mysqli_query($db,$selectTitle);
 	$num_rows = mysqli_num_rows($result);
 	if($num_rows  > 0 ){
 	while ($row=mysqli_fetch_array($result));

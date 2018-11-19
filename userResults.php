@@ -59,7 +59,7 @@ $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 if(!$db) exit("Error - could not select database");
 
 ?>
-<button class="followBtn"><a class="follow" href="follow.php">Follow</a></button>
+<button class="followBtn"><a class="follow" href="follow_user.php">Follow</a></button>
 <?php
 
 	
@@ -101,16 +101,7 @@ if(!$db) exit("Error - could not select database");
 		echo ("Artist Name: $row[artist] <br \> <hr>");
 		
 		}
-	
-	?>
-	
-<!-- 	<ul>
-	<li> <?php //$titleName ?></li>
-	<li> <?php //$artistName ?></li>
-	<li> <?php //$userName ?></li>
-	</ul> */-->
-	
-	<?php }
+	 }
 	else {
 		echo "no results";
 	}

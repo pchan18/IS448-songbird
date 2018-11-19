@@ -14,15 +14,15 @@
 	
 	//cookies
 	
-	if(isset($_COOKIE["search_user"]))
+	if(isset($_COOKIE["search_artist"]))
 	{
-		setcookie("search_user","$_POST[user]", time()+86400);
-		$search_user = $_COOKIE["search_user"];
+		setcookie("search_artist","$_POST[artist]", time()+86400);
+		$search_artist = $_COOKIE["search_artist"];
 	}
 	else
 	{
-		setcookie("search_user","$_POST[user]", time()+86400);
-		$search_user = $_POST["user"];
+		setcookie("search_artist","$_POST[artist]", time()+86400);
+		$search_artist = $_POST["artist"];
 	}
 ?>
 
@@ -61,7 +61,7 @@
 
 		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 		
-		$constructed_query = "INSERT INTO sb_followed (uname,followed_user) VALUES ('$search_user','$_SESSION[user]')";
+		$constructed_query = "INSERT INTO sb_followed (uname,followed_user) VALUES ('$_SESSION[user]','$search_user')";
 			#Execute query
 			$result = mysqli_query($db, $constructed_query);
 			

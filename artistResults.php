@@ -11,14 +11,15 @@
 		$user = $_SESSION['user'];
 	}
 	
-	if(isset($_COOKIE["search_user"]))
+	if(isset($_COOKIE["search_artist"]))
 	{
-		$search_user = $_COOKIE["search_user"];
+		setcookie("search_artist","$_POST[artist]", time()+86400);
+		$search_artist = $_COOKIE["search_artist"];
 	}
 	else
 	{
-		setcookie("search_user","$_POST[user]", time()+86400);
-		$search_user = $_POST["user"];
+		setcookie("search_artist","$_POST[artist]", time()+86400);
+		$search_artist = $_POST["artist"];
 	}
 ?>
 <html lang="en">
@@ -54,7 +55,7 @@ $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 if(!$db) exit("Error - could not select database");
 
 ?>
-<button class="followBtn"><a href="follow.php"></a>Follow</button>
+<button class="followBtn"><a href="follow_artist.php"></a>Follow</button>
 <?php
 
 	
@@ -79,7 +80,7 @@ if(!$db) exit("Error - could not select database");
 //execute query
 	$result = mysqli_query($db,$constructed_query);
 	
-	if(! $result){
+	if(!$result){
 					print("Error - query could not be executed");
 					$error = mysqli_error($db);
 					print "<p> . $error . </p>";
