@@ -124,15 +124,31 @@
 				}
 				
 				$num_rows = mysqli_num_rows($result);
+				$row_array = mysqli_fetch_array($result);
 
-				if($num_rows == 0)
+				if($num_rows > 0)
 				{
-					print("You have not followed anything yet");
+					for($row_num = 1; $row_num <= $num_rows; $row_num++){
+						$row = mysqli_fetch_array($result);
+						
+						$follow_song = $row_array['followed_song'];
+						$follow_artist = $row_array['followed_artist'];
+						$follow_user = $row_array['followed_user'];
+						
+						if($follow_song !=null)
+							echo("Song: $follow_song");
+						if($follow_artist !=null)
+							echo("Artist: $follow_artist");
+						if($follow_user !=null)
+							echo("User: $follow_user");
+						
+					}
+					
 				}
 				else{
-					$row_array = mysqli_fetch_array($result);
 					
-					print("Song: $row_array[followed_song]");
+					print("You have not followed anything yet");			
+					
 				}
 			?>
 			</p>

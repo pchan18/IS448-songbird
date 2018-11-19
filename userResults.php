@@ -11,6 +11,16 @@
 	else{
 		$user = $_SESSION['user'];
 	}
+	
+	if(isset($_COOKIE["search_user"]))
+	{
+		$search_user = $_COOKIE["search_user"];
+	}
+	else
+	{
+		setcookie("search_user","$_POST[user]", time()+86400);
+		$search_user = $_POST["user"];
+	}
 ?>
 <html lang="en">
 <head>

@@ -11,6 +11,16 @@
 	else{
 		$user = $_SESSION['user'];
 	}
+	
+	if(isset($_COOKIE["search_user"]))
+	{
+		$search_user = $_COOKIE["search_user"];
+	}
+	else
+	{
+		setcookie("search_user","$_POST[user]", time()+86400);
+		$search_user = $_POST["user"];
+	}
 ?>
 
 <!DOCTYPE html>
@@ -27,17 +37,12 @@
 <body>
 
 	<?php
-		echo("pressed the follow button <br \>");
 		
-		echo($user + "<br \>");
 		$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 
 		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 		
-		
-		
-		$constructed_query = "INSERT INTO sb_followed (uname,followed_user) VALUES ($user,'$_SESSION['user']')";
-		print($constructed_query + "<br \>");
+		$constructed_query = "INSERT INTO sb_followed (uname,followed_user) VALUES ('$search_user','$_SESSION[user]')";
 			#Execute query
 			$result = mysqli_query($db, $constructed_query);
 			
