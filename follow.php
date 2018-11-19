@@ -28,11 +28,15 @@
 
 	<?php
 		echo("pressed the follow button <br \>");
+		
+		echo($user + "<br \>");
 		$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 
 		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 		
-		$constructed_query = "INSERT INTO sb_followed (followed_song,followed_artist,uname,followed_user) VALUES ('$user')";
+		
+		
+		$constructed_query = "INSERT INTO sb_followed (uname,followed_user) VALUES ($user,'$_SESSION['user']')";
 		print($constructed_query + "<br \>");
 			#Execute query
 			$result = mysqli_query($db, $constructed_query);

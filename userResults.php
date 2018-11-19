@@ -1,4 +1,17 @@
+<?php
+//ADD your session code here
 
+	session_start();
+	
+	if(!isset($_SESSION["user"])){
+		
+		header('Location: login.php'); 
+		
+	}
+	else{
+		$user = $_SESSION['user'];
+	}
+?>
 <html lang="en">
 <head>
 
@@ -32,7 +45,7 @@ $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 if(!$db) exit("Error - could not select database");
 
 ?>
-<button class="followBtn"><a href="follow.php"></a>Follow</button>
+<button class="followBtn"><a class="follow" href="follow.php">Follow</a></button>
 <?php
 
 	
@@ -44,11 +57,7 @@ if(!$db) exit("Error - could not select database");
 	
 //prevent SQL injection
 	
-	$user= mysqli_real_escape_string($db,$user);
-	
-	
-	echo $user;
-	
+	$user= mysqli_real_escape_string($db,$user);	
 	
 	if ((isset($_POST["user"]) && (!empty($_POST["user"])))) {
 			
@@ -57,7 +66,6 @@ if(!$db) exit("Error - could not select database");
 	
 	$constructed_query = "Select * FROM `sb_review`	WHERE user_profile='$user'";
 
-	print($constructed_query);
 //execute query
 	$result = mysqli_query($db,$constructed_query);
 	
@@ -69,17 +77,16 @@ if(!$db) exit("Error - could not select database");
 				}
 				
 	$num_rows = mysqli_num_rows($result);
-	print($num_rows);
+	echo("There are $num_rows search results for $user. <br \>");
 	if($num_rows > 0 ){
-		$row_array = mysqli_fetch_array($result);
+		for($row_num = 1; $row_num <= $num_rows; $row_num++){
+		$row = mysqli_fetch_array($result);
 		
-		$userName = $row_array['user_profile'];
-		$titleName = $row_array['title'];
-		$artistName = $row_array['artist'];
+		echo ("User's Name: $row[user_profile] <br \>");
+		echo ("Song Title: $row[title] <br \>");
+		echo ("Artist Name: $row[artist] <br \> <hr>");
 		
-		echo $titleName;
-		echo $artistName;
-		echo $userName;
+		}
 	
 	?>
 	
