@@ -12,8 +12,11 @@
 		$user = $_SESSION['user'];
 	}
 	
+	//cookies
+	
 	if(isset($_COOKIE["search_user"]))
 	{
+		setcookie("search_user","$_POST[user]", time()+86400);
 		$search_user = $_COOKIE["search_user"];
 	}
 	else
