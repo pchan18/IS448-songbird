@@ -1,3 +1,10 @@
+<?php 
+session_start();
+//checking of user is logged in. If not, redirect to login page.
+if (isset($_SESSION['user']) == FALSE){
+     header("Location: login.php");
+} 
+?>
 <!DOCTYPE html>
 <!-- mypage.html first lab      -->
 <html lang="en">
@@ -17,7 +24,7 @@
  <div class="navBar">
   <a href="home.php"><img id="navLogo" src="images/SONGBIRD-WHITE.png"  alt ="White version of songbird logo" width="35" height = "35"></a>
   <button class="navBtn"><a class="nav" href="home.php">HOME</a></button>
-  <button class="navBtn"><a class="nav" href="review.php">REVIEW</a></button>
+  <button class="navBtn"><a class="nav" href="justreviews.php">REVIEW</a></button>
   <button class="navBtn"><a class="nav" href="submit.php">SUBMIT</a></button>
   <button class="navBtn"><a class="nav" href="search.php">SEARCH</a></button>
   <button class="currentBtn">PROFILE</button>
