@@ -64,7 +64,7 @@ if(!$db) exit("Error - could not select database");
 //todo: write and execute the query to select from table sb_review TITLE
 	$constructed_query = "SELECT * FROM `sb_followed` WHERE uname = '$user'";
 	
-	$constructed_query = "Select * FROM `sb_review`	WHERE user_profile='$user'";
+	$constructed_query = "Select * FROM `sb_review`	WHERE user_profile LIKE '%$user%'";
 
 //execute query
 	$result = mysqli_query($db,$constructed_query);
