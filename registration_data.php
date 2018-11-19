@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Registration Data | Victor Cho -->
 <html lang="EN">
   <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
