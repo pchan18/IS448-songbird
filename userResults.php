@@ -22,9 +22,9 @@
 	</div>
 
 	<div class="sideHead">
-		<h1><a href= https://swe.umbc.edu/~mrobe1/is448/project/search.php>Search</a></h1>
+		<h1><a href="search.php">Search</a></h1>
 	</div>
-	
+	<div class="main">
 	
 <?php
 //connect to database
@@ -37,8 +37,7 @@ if(!$db) exit("Error - could not select database");
 
 	
 	$user = $_POST["user"];
-	
-	echo $title;
+
 //changes from html
 
 	$user= htmlspecialchars($_POST['user']); 
@@ -48,33 +47,47 @@ if(!$db) exit("Error - could not select database");
 	$user= mysqli_real_escape_string($db,$user);
 	
 	
-	echo $title;
+	echo $user;
 	
 	
-	if ((isset($_POST["user_profile"]) && (!empty($_POST["user_profile"])))) {
+	if ((isset($_POST["user"]) && (!empty($_POST["user"])))) {
 			
 //todo: write and execute the query to select from table sb_review TITLE
-	$selectUser = "Select 'user_profile', 'title', 'artist' 
-	FROM 'sb_review'
-	WHERE 'title' LIKE '%$user%' ";
+	$constructed_query = "SELECT * FROM `sb_followed` WHERE uname = '$user'";
+	
+	$constructed_query = "Select * FROM `sb_review`	WHERE user_profile='$user'";
 
+	print($constructed_query);
 //execute query
-	$result = mysql_query($db,$selectUser);
+	$result = mysqli_query($db,$constructed_query);
+	
+	if(! $result){
+					print("Error - query could not be executed");
+					$error = mysqli_error($db);
+					print "<p> . $error . </p>";
+					exit;
+				}
+				
 	$num_rows = mysqli_num_rows($result);
+	print($num_rows);
 	if($num_rows > 0 ){
-	while ($row=mysqli_fetch_array($resultUser));
-	{
-		$titleName = $row['title'];
-		$artistName = $row['artist'];
-		$userName = $row['user_profile'];
-	}
+		$row_array = mysqli_fetch_array($result);
+		
+		$userName = $row_array['user_profile'];
+		$titleName = $row_array['title'];
+		$artistName = $row_array['artist'];
+		
+		echo $titleName;
+		echo $artistName;
+		echo $userName;
+	
 	?>
 	
-	<ul>
-	<li> <?php $titleName ?></li>
-	<li> <?php $artistName ?></li>
-	<li> <?php $userName ?></li>
-	</ul>
+<!-- 	<ul>
+	<li> <?php //$titleName ?></li>
+	<li> <?php //$artistName ?></li>
+	<li> <?php //$userName ?></li>
+	</ul> */-->
 	
 	<?php }
 	else {
@@ -89,6 +102,8 @@ if(!$db) exit("Error - could not select database");
 	}
 	
 	?> 
+	
+	</div>
 	
 </body>
 

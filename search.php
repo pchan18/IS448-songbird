@@ -40,7 +40,7 @@
 	</div>
 <br/><br/>
 	<div class="sideHead">
-		<h1><a href= https://swe.umbc.edu/~mrobe1/is448/project/search.php>Search</a></h1>
+		<h1><a href="search.php">Search</a></h1>
 	</div>
 	
 	<div >
@@ -65,7 +65,7 @@
 		<br/>
 	</form>
 	<hr>
-	<form class="form" method ="POST" action="userResults2.php">
+	<form class="form" method ="POST" action="userResults.php">
 	<h2>Seach by User</h2>
 		<input class="search" type="text" placeholder="User" name="user">
 		<br/><br/><br />

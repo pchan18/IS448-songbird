@@ -22,9 +22,9 @@
 	</div>
 
 	<div class="sideHead">
-		<h1><a href= https://swe.umbc.edu/~mrobe1/is448/project/search.php>Search</a></h1>
+		<h1><a href="search.php">Search</a></h1>
 	</div>
-	
+	<div class ="main">
 	
 <?php
 //connect to database
@@ -85,6 +85,7 @@ if(!$db) exit("Error - could not select database");
 	}
 	
 	?> 
+	</div>
 	
 </body>
 
