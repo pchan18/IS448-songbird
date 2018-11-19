@@ -2,6 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
+<!-- Login Data | Victor Cho -->
 <html lang="en">
 <head>
 		<meta http-equiv="Content-Type" content = "text/html; charset=utf-8"/>

@@ -50,7 +50,8 @@
 	<div class="sideHead">
 		<h1><a href="search.php">Search</a></h1>
 	</div>
-	<div class="main">
+<div class="main" style="margin-top: 5%; margin-left:10%;">
+
 	
 <?php
 //connect to database

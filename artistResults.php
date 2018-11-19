@@ -1,4 +1,26 @@
-
+<?php
+//ADD your session code here
+	session_start();
+	
+	if(!isset($_SESSION["user"])){
+		
+		header('Location: login.php'); 
+		
+	}
+	else{
+		$user = $_SESSION['user'];
+	}
+	
+	if(isset($_COOKIE["search_user"]))
+	{
+		$search_user = $_COOKIE["search_user"];
+	}
+	else
+	{
+		setcookie("search_user","$_POST[user]", time()+86400);
+		$search_user = $_POST["user"];
+	}
+?>
 <html lang="en">
 <head>
 
@@ -22,10 +44,10 @@
 	</div>
 
 	<div class="sideHead">
-		<h1><a href="search.php">Search</a></h1>
+		<h1><a href= "search.php">Search</a></h1>
 	</div>
-	<div class ="main">
 	
+		<div class="main" style="margin-top: 5%; margin-left:10%;">
 <?php
 //connect to database
 $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
@@ -38,7 +60,6 @@ if(!$db) exit("Error - could not select database");
 	
 	$artist = $_POST["artist"];
 
-	echo $artist;
 //changes from html
 	
 	$artist = htmlspecialchars($_POST['artist']); 
@@ -47,31 +68,39 @@ if(!$db) exit("Error - could not select database");
 	
 	$artist = mysqli_real_escape_string($db,$artist);
 	
+	echo "Entered Search: $artist <br>";
+	
 	if ((isset($_POST["artist"]) && (!empty($_POST["artist"])))) {
 			
 //todo: write and execute the query to select from table sb_review TITLE
-	$selectArtist = "Select 'user_profile', 'title', 'artist' 
-	FROM 'sb_review'
-	WHERE 'title' LIKE '%$artist%' ";
+	$constructed_query = "Select * FROM `sb_review`	WHERE artist LIKE '%$artist%'";
+	
 
 //execute query
-	$result = mysql_query($db,$selectArtist);
+	$result = mysqli_query($db,$constructed_query);
+	
+	if(! $result){
+					print("Error - query could not be executed");
+					$error = mysqli_error($db);
+					print "<p> . $error . </p>";
+					exit;
+				}
+	
 	$num_rows = mysqli_num_rows($result);
+	print("There are $num_rows search results for $artist. <br \>");
+	
 	if($num_rows > 0 ){
-	while ($row=mysqli_fetch_array($result));
-	{
-		$titleName = $row['title'];
-		$artistName = $row['artist'];
-		$userName = $row['user_profile'];
-	}
+		for($row_num = 1; $row_num <= $num_rows; $row_num++){
+		$row = mysqli_fetch_array($result);
+	
+		
+		echo ("User's Name: $row[user_profile] <br \>");
+		echo ("Song Title: $row[title] <br \>");
+		echo ("Artist Name: $row[artist] <br \> <hr>");
+		}
+	
 	?>
-	
-	<ul>
-	<li> <?php $titleName ?></li>
-	<li> <?php $artistName ?></li>
-	<li> <?php $userName ?></li>
-	</ul>
-	
+
 	<?php }
 	else {
 		echo "no results";
@@ -85,9 +114,7 @@ if(!$db) exit("Error - could not select database");
 	}
 	
 	?> 
-	
 	</div>
-	
 </body>
 
 </html>
