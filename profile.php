@@ -131,16 +131,16 @@
 					for($row_num = 1; $row_num <= $num_rows; $row_num++){
 						$row = mysqli_fetch_array($result);
 						
-						$follow_song = $row_array['followed_song'];
+						$follow_song = $row_array[$row_num]['followed_song'];
 						$follow_artist = $row_array['followed_artist'];
 						$follow_user = $row_array['followed_user'];
 						
-						if($follow_song !=null)
-							echo("Song: $follow_song");
-						if($follow_artist !=null)
-							echo("Artist: $follow_artist");
-						if($follow_user !=null)
-							echo("User: $follow_user");
+						if($follow_song != null)
+							echo("Song: $follow_song <br \>");
+						else if($follow_artist !=null)
+							echo("Artist: $follow_artist <br \>");
+						else if($follow_user !=null)
+							echo("User: $follow_user <br \>");
 						
 					}
 					

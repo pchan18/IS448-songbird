@@ -61,7 +61,7 @@
 
 		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 		
-		$constructed_query = "INSERT INTO sb_followed (uname,followed_user) VALUES ('$_SESSION[user]','$search_user')";
+		$constructed_query = "INSERT INTO sb_followed (uname,followed_song) VALUES ('$_SESSION[user]','$search_title')";
 			#Execute query
 			$result = mysqli_query($db, $constructed_query);
 			
@@ -72,7 +72,7 @@
 				print "<p> . $error . </p>";
 				exit;
 			}
-			echo("Successfully followed $search_user");
+			echo("Successfully followed $search_title");
 	?>
 	</div>
 	</body>
