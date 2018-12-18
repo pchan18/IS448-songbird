@@ -74,8 +74,15 @@
 			}
 			$row_array = mysqli_fetch_array($result);
 			
-			print("$row_array[bio]");
+			//print("$row_array[bio]");
 		?>
+            Update Bio:<input type="text" id="bioText" value="Update your bio" />
+            <button id="update">Update</button>
+			
+			<div style="border: 1px black solid;" id="bio">
+            <!-- definition will appear here -->
+			</div>
+		
 		</p>
 		<button><a href="settings.php">Settings</a></button>
 	</div>
