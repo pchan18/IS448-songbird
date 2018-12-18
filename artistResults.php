@@ -69,7 +69,7 @@ if(!$db) exit("Error - could not select database");
 	
 	$artist = mysqli_real_escape_string($db,$artist);
 	
-	echo "Entered Search: $artist <br>";
+	echo "Entered Search: Artist $artist <br>";
 	
 	if ((isset($_POST["artist"]) && (!empty($_POST["artist"])))) {
 			

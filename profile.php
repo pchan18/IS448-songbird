@@ -23,6 +23,11 @@
 		<link rel="stylesheet" type="text/css" href="profile.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
+		<script src="profile.js" type="text/javascript"></script>
+
+
 </head>
 
 <body>
@@ -107,7 +112,7 @@
 				}
 			?>
 			</p>
-		<h1><u>Your Music</u></h1>	
+		<h1><u>Your Music: Drag to Order them!</u></h1>	
 			<p>
 				<?php
 				$constructed_query = "SELECT * FROM `sb_followed` WHERE uname = '$user'";
@@ -128,6 +133,9 @@
 
 				if($num_rows > 0)
 				{
+					?>
+						<ol id="music">
+						<?php
 					for($row_num = 1; $row_num <= $num_rows; $row_num++){
 						$row = mysqli_fetch_array($result);
 						
@@ -135,14 +143,25 @@
 						$follow_artist = $row['followed_artist'];
 						$follow_user = $row['followed_user'];
 						
-						if($follow_song != null)
-							echo("Song: $follow_song <br \>");
-						else if($follow_artist !=null)
-							echo("Artist: $follow_artist <br \>");
-						else if($follow_user !=null)
-							echo("User: $follow_user <br \>");
-						
+						if($follow_song != null){
+						?>
+							<li>Song: <?php echo $follow_song ?></li>
+						<?php
+						}
+						else if($follow_artist !=null){
+							?>
+							<li>Artist: <?php echo $follow_artist ?></li>
+						<?php
+						}
+						else if($follow_user !=null){
+							?>
+							<li>User: <?php echo $follow_user?></li>
+						<?php
+						}
 					}
+					?>
+						</ol>
+						<?php
 					
 				}
 				else{

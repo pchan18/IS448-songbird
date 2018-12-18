@@ -71,7 +71,9 @@ if(!$db) exit("Error - could not select database");
 	
 //prevent SQL injection
 	
-	$user= mysqli_real_escape_string($db,$user);	
+	$user= mysqli_real_escape_string($db,$user);
+
+	echo "Entered Search: ser $user <br>";	
 	
 	if ((isset($_POST["user"]) && (!empty($_POST["user"])))) {
 			

@@ -67,6 +67,8 @@ if(!$db) exit("Error - could not select database");
 //prevent SQL injection
 	$title= mysqli_real_escape_string($db,$title);
 	
+	echo "Entered Search: Title $title <br>";
+	
 	if ((isset($_POST["title"]) && (!empty($_POST["title"])))) {
 			
 //todo: write and execute the query to select from table sb_review TITLE
