@@ -5,12 +5,12 @@
 window.onload = pageLoad;
 function pageLoad(){
   $("button").onclick= validate;
-  $("uname").onblur = userCheck;
-  $("email").onblur = emailCheck;
+  $("uname").onkeyup = userCheck;
+  $("email").onkeyup = emailCheck;
 }
 
 function validate() {
-return (check1() && check2() && check3());
+return (check1() && checkName() && check2() && check3() && check4());
 }
 
 //Check if any forms are empty
@@ -39,7 +39,7 @@ function check1() {
 	}
 	
 	if($('pw2').value == "") {
-		errormessage += "Enter your password confirmation \n";
+		errormessage += "Confirm your password \n";
 	}
 
 	if($('uname').value == "") {
@@ -55,12 +55,43 @@ function check1() {
 	}
 }
 
+//Check first and last name
+function checkName() {
+	var firstName = $("fname").value;
+	var lastName = $("lname").value;
+	var Pattern = /^[a-zA-Z]+$/;
+	var fnResult = Pattern.test(firstName);
+	var lnResult = Pattern.test(lastName);
+	
+	if (fnResult==false) 
+	{
+	alert("Your first name (" + firstName + ") can only contain letters.");
+	$("fname").select();
+	$('fname').style.borderColor = "red";
+	return false;
+	} 
+	else {
+		if (lnResult==false)
+	{
+	alert("Your last name (" + lastName + ") can only contain letters.");
+	$("lname").select();
+	$("lname").style.borderColor = "red";
+	return false;
+	} 
+	else {
+		return true;
+	}
+		}
+}
+
 //Check Email Address
 function check2() {
 	
 	var email = $('email').value;
 	var pattern = /\w+[@]\w+/;
 	var result = pattern.test(email);
+	var availability = $('msgbox2').innerHTML;
+	var availabilityStr = "Email Exists.";
 	
 	if (result==false) 
 	{
@@ -70,8 +101,18 @@ function check2() {
 		return false;
 	}
 	else {
+		if (availability.toString() == availabilityStr.toString())
+	{
+		alert("Please enter a different email.");
+		$('email').style.borderColor = "red";
+		$("email").select();
+		return false;
+	}
+	else {
 		return true;
 	}
+		}
+
 }
 
 //check if passwords match
@@ -86,6 +127,24 @@ function check3(){
 		$("pw1").select();
 		return false;
 	} else {
+		return true;
+	}
+}
+
+//prevent user from registering with a duplicate username
+function check4(){
+	var uname = $('uname').value; 
+	var availability = $('msgbox').innerHTML;
+	var availabilityStr = "Username Exists.";
+	
+	if (availability.toString() == availabilityStr.toString())
+	{
+		alert("Please enter a different username.");
+		$('uname').style.borderColor = "red";
+		$("uname").select();
+		return false;
+	}
+	else {
 		return true;
 	}
 }
