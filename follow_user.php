@@ -56,10 +56,30 @@
 	<div class="main">
 
 	<?php
-		
+	
 		$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 
 		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
+		
+		
+		$constructed_query = "SELECT * FROM sb_followed WHERE followed_user = '$search_user'";
+		
+		$result = mysqli_query($db, $constructed_query);
+		
+		if(! $result){
+				print("Error - query could not be executed");
+				$error = mysqli_error($db);
+				print "<p> . $error . </p>";
+				exit;
+			}
+			
+		$num_rows = mysqli_num_rows($result);
+		
+		if ($num_rows != 0)
+		{
+			echo("You are already following $search_user");
+		}
+		else{
 		
 		$constructed_query = "INSERT INTO sb_followed (uname,followed_user) VALUES ('$_SESSION[user]','$search_user')";
 			#Execute query
@@ -73,6 +93,7 @@
 				exit;
 			}
 			echo("Successfully followed $search_user");
+		}
 	?>
 	</div>
 	</body>

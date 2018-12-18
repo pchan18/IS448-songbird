@@ -61,18 +61,38 @@
 
 		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 		
-		$constructed_query = "INSERT INTO sb_followed (uname,followed_song) VALUES ('$_SESSION[user]','$search_title')";
-			#Execute query
-			$result = mysqli_query($db, $constructed_query);
-			
-			#if result object is not returned, then print an error and exit the PHP program
-			if(! $result){
+		$constructed_query = "SELECT * FROM sb_followed WHERE followed_song = '$search_title'";
+		
+		$result = mysqli_query($db, $constructed_query);
+		
+		if(! $result){
 				print("Error - query could not be executed");
 				$error = mysqli_error($db);
 				print "<p> . $error . </p>";
 				exit;
 			}
-			echo("Successfully followed $search_title");
+			
+		$num_rows = mysqli_num_rows($result);
+		
+		if ($num_rows != 0)
+		{
+			echo("You are already following $search_title");
+		}
+		else{
+			
+			$constructed_query = "INSERT INTO sb_followed (uname,followed_song) VALUES ('$_SESSION[user]','$search_title')";
+				#Execute query
+				$result = mysqli_query($db, $constructed_query);
+				
+				#if result object is not returned, then print an error and exit the PHP program
+				if(! $result){
+					print("Error - query could not be executed");
+					$error = mysqli_error($db);
+					print "<p> . $error . </p>";
+					exit;
+				}
+				echo("Successfully followed $search_title");
+		}
 	?>
 	</div>
 	</body>
