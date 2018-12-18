@@ -4,7 +4,7 @@
 
 window.onload = pageLoad;
 function pageLoad(){
-  $("button").onclick= validate;
+  $("register").onsubmit= validate;
   $("uname").onkeyup = userCheck;
   $("email").onkeyup = emailCheck;
 }
@@ -112,7 +112,6 @@ function check2() {
 		return true;
 	}
 		}
-
 }
 
 //check if passwords match
