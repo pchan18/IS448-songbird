@@ -1,4 +1,6 @@
 <?php
+//Victor Cho IS448
+//This php code is executed when the userCheck function event is triggered in registration.js
 $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 
