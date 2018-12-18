@@ -36,6 +36,7 @@
 		<link rel="stylesheet" type="text/css" href="searchbar.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+		<script type = "text/javascript" src = "follow.js"></script>
 </head>
 
 <body>
@@ -77,7 +78,11 @@
 		
 		if ($num_rows != 0)
 		{
-			echo("You are already following $search_user");
+			?>
+				<span id="theText" style =
+                "position: absolute; left:500px; top: 0px; 
+                 font: bold 20pt 'Times Roman';">You are already following <?php print($search_user)?></span>
+			<?php
 		}
 		else{
 		
@@ -92,7 +97,11 @@
 				print "<p> . $error . </p>";
 				exit;
 			}
-			echo("Successfully followed $search_user");
+			?>
+				<span id="theText" style =
+                "position: absolute; left: 500px; top: 0px; 
+                 font: bold 20pt 'Times Roman';">Successfully followed <?php print($search_user)?></span>
+				<?php
 		}
 	?>
 	</div>

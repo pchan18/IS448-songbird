@@ -39,14 +39,11 @@ body{
 .main{
 	background-color:white;
 	margin-left: 9%;
-	margin-top:4%;
 	padding:2%;
-	margin-bottom:0;
-	margin-right:0;
 	height:600px;
-	width:1000;
+	width:1093;
 	padding-top:1%;
-	bottom:sticky;
+	right: 0;
 }
 
 .followBtn{
