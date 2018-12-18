@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+#msgbox{
+	padding:5px;
+}
+
 a{
 	color: white;
 }

@@ -17,6 +17,9 @@
 <meta http-equiv="Content-Type" content = "text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="submit.css"/>
 <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
+	<script type="text/javascript" src="submit.js"></script>
 <title>Songbird Submit</title>
 </head>
 
@@ -35,21 +38,23 @@
 	
 	<!-- Form with required information needed to make a review -->
 	<div class="container">
+		<br/>
 		<h1>SUBMIT</h1>
+						
+		
 			<fieldset>
 			<legend>Share your thoughts</legend>
 			<form name="customForm" action="review.php" method="POST">
-				<!-- implemented through ajax -->
-				Album Cover
-					<br/>
-						<img id="logo" src="images/SONGBIRD-BLACK.png" alt ="White version of songbird logo as filler " width="200" height = "200" >
+					
+				<div onclick="new Effect.Shake($(this));">
+					<img id="logo" src="images/SONGBIRD-BLACK.png" alt ="White version of songbird logo as filler " width="200" height = "200" >
 						<br/>
-						<input type="submit" id="upload file" value="Upload"/>
-					<br/>
+				</div>
 				<dl>
 					<!-- input username | text value-->
 					<dt>User: </dt>
-						<dd><input type = "text" name="user_profile" placeholder="Username" size = "50" /></dd>
+						<dd><input type = "text" name="user_profile" id="username" placeholder="Username" size = "50"/>
+							<span id="msgbox"></span></dd>
 					<!-- input album title | text value -->
 					<dt>Album Title: </dt>
 						<dd><input type = "text" name="title" placeholder="Album Title" size = "50" /></dd>
@@ -61,7 +66,7 @@
 						<dd><input type = "text" name="genre" placeholder="Genre" size = "50" /></dd>
 					<!-- input date released of album | date value -->
 					<dt>Date Released: </dt>
-						<dd><input type = "date" name="date_released"/></dd>
+						<dd><input type = "date" id="date" name="date_released"/></dd>
 					<!-- input rating must choose from given options ranging 1-5 | number value -->
 					<dt>Rating: </dt>
 						<dd><select name="rating">
@@ -82,9 +87,12 @@
 						<dd><input type = "text" name="tags" placeholder="tags" size = "50" /></dd>
 				</dl>
 				<input type="submit" id="submitButton" value="Submit"/>
+				
 			</form>
 			</fieldset>
 	</div>
+	
+	
 </body>
 </html>
 

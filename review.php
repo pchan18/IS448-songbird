@@ -43,6 +43,7 @@
 	$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 
 	if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
+	
 
 	// Checking Variables to ensure none are empty from form
 	if ((isset($_POST['artist'])  && !empty($_POST['artist'])) && (isset($_POST['description'])  && !empty($_POST['description'])) && (isset($_POST['genre'])  && !empty($_POST['genre'])) && (isset($_POST['rating'])  && !empty($_POST['rating'])) &&(isset($_POST['tags'])  && !empty($_POST['tags'])) && (isset($_POST['title'])  && !empty($_POST['title'])) && (isset($_POST['user_profile'])  && !empty($_POST['user_profile'])) &&(isset($_POST['date_released'])  && !empty($_POST['date_released']))) 
@@ -69,6 +70,8 @@
 		
 		//setting variable date to date the review was submitted
 		$date_of_post = date("Y-m-d");
+		
+		if ($user != $user_profile) exit ( "Username does not match. <a href=\"submit.php\">Click here to go back.</a>");
 		
 		//inserting data into database table
 		$constructed_query = "INSERT INTO sb_review(user_profile, title, artist, date_released, description, rating, genre, date_of_post, tags) VALUES ('$user_profile', '$title', '$artist', '$date_released', '$description', '$rating', '$genre', '$date_of_post', '$tags')";
