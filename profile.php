@@ -85,7 +85,7 @@
 			<p>
 			
 			Song Title:
-            <input type="text" id="term" value="Enter the song title of your post!" />
+            <input type="text" id="title" value="Enter the song title!" />
             <button id="lookup">Lookup</button>
 			
 			<div id="result">
