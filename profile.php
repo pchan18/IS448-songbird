@@ -88,7 +88,7 @@
             <input type="text" id="title" value="Enter the song title!" />
             <button id="lookup">Lookup</button>
 			
-			<div id="result">
+			<div style="border: 1px black solid;" id="result">
             <!-- definition will appear here -->
 			</div>
 			

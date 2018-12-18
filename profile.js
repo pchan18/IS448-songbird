@@ -9,12 +9,12 @@ function pageLoad(){
 }
 function showDefinition(){
 	
-	var searchTerm = $("title").value;
+	var title = $("title").value;
 	
 	new Ajax.Request( "profile_search.php", 
 	{ 
 		method: "get", 
-		parameters: {parameter1:searchTerm},
+		parameters: {title:title},
 		onSuccess: displayResult,
 		onFailure: displayFailureMessage
 	} 

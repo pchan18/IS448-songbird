@@ -1,41 +1,49 @@
 <?php
 
-//an array that contains the abbreviations in upper-case and their corresponding full-form
-$arr = array(
-	"CSS" => "cascading style sheets",
-	"JS" => "JavaScript",
-	"DOM" => "Document object model",
-	"DNS" => "Domain name server",
-	"HTTP" => "Hyper Text Transfer Protocol",
-	"HTML" => "Hyper Text Markup Language",
-	"AJAX" => "Asynchronous Javascript and XML",
-	"XML" => "eXtensible Markup Language",
-);
-
-$q=$_GET["parameter1"];
-
-
-
-//above stores the abbreviations
-
-//convert the user-entered value into all-upper-case, because that is the form in which our array
-$uppercaseString = strtoupper($q);
-//lookup all hints from array if length of q>0
-if (strlen($uppercaseString) > 0)
-{
-	// Set output to "no suggestion" if no definitions were found
-	// or to the correct values
-	if (array_key_exists($uppercaseString,$arr))
-	//if($arr[$uppercaseString] != ""){
-	{
-		$result = $arr[$uppercaseString];
+	session_start();
+	
+	if(!isset($_SESSION["user"])){
+		
+		header('Location: login.php'); 
+		
 	}
 	else{
-		$result = "no suggestion";
+		$user = $_SESSION['user'];
 	}
-   
-}
 
+$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
+if(!$db) exit("Error - could not select database");
+
+	$constructed_query = "SELECT title FROM `sb_review` WHERE user_profile = '$user'";
+			
+	#Execute query
+	$result = mysqli_query($db, $constructed_query);
+			
+	#if result object is not returned, then print an error and exit the PHP program
+	if(! $result){
+		print("Error - query could not be executed");
+		$error = mysqli_error($db);
+		print "<p> . $error . </p>";
+		exit;
+	}
+		
+	$num_rows = mysqli_num_rows($result);
+	$num_rows = mysqli_num_rows($result);
+	$arr = mysqli_fetch_array($result);
+
+	$q=$_GET["title"];
+	
+	for ($i = 0; $i < count($arr)-1; $i++) {
+	
+		if ($arr[$i] == $q)
+		{
+			$result = "You wrote a post about the song $q" ;
+		}
+		else{
+			$result = "You have not written a post about the song $q";
+		}
+	}
 //output the response
 echo "$result";
+
 ?>
