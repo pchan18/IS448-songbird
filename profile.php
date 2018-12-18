@@ -83,6 +83,15 @@
 	
 		<h1><u>Your Post</u></h1>
 			<p>
+			
+			Song Title:
+            <input type="text" id="term" value="Enter the song title of your post!" />
+            <button id="lookup">Lookup</button>
+			
+			<div id="result">
+            <!-- definition will appear here -->
+			</div>
+			
 			<?php
 				$constructed_query = "SELECT * FROM `sb_review` WHERE user_profile = '$user'";
 			
