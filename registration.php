@@ -25,7 +25,7 @@
 <p>New Password: <input type="password" name="pword1" style="margin-left:46px;" id="pw1"/></p>
 <p>Confirm Password: <input type="password" name="pword2" style="margin-left:20px;" id="pw2"/></p>
 <p>Screen Name: <input type="text" name="screen" style="margin-left:57px;" id="uname"/> <span id="msgbox"></span> </p>
-<p>Bio: <textarea rows="10" cols="50" name="bio" id="bio">Tell us about yourself</textarea></p>
+<p>Bio: <textarea rows="10" cols="50" name="bio" id="bio" placeholder ="Tell us about yourself"></textarea></p>
 <input type="submit" value="Submit" id="button"/>
 <p></p>
 </form></div>
