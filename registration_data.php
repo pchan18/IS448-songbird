@@ -25,61 +25,7 @@
 		$db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 		if (mysqli_connect_errno())	exit("Error - could not connect to MySQL");
 
-		//Checks if username is taken
-		$checkifuserexists = 'SELECT uname FROM sb_user WHERE uname = "' . $screen . '" LIMIT 1';
-		$result2 = mysqli_query($db,$checkifuserexists);
-		$numresult = mysqli_num_rows($result2);
-
-		if($numresult > 0){
-		echo "The username you entered already exists. <a href='registration.php'> Click here </a> to enter a different one.";
-		die();
-		}
-		else{
-		}
-
-		//Checks if email is taken
-		$checkifemailexists = 'SELECT email FROM sb_user WHERE email = "' . $email . '" LIMIT 1';
-		$result2 = mysqli_query($db,$checkifemailexists);
-		$numresult = mysqli_num_rows($result2);
-
-		if($numresult > 0){
-		echo "The email you entered already exists. <a href='registration.php'> Click here </a> to enter a different one.";
-		die();
-		}
-		else{
-		}
-
-		if ((isset($_POST["fname"]) && (!empty($_POST["fname"]))) &&
-			(isset($_POST["lname"]) && (!empty($_POST["lname"]))) &&
-			(isset($_POST["email"]) && (!empty($_POST["email"]))) &&
-			(isset($_POST["bday"]) && (!empty($_POST["bday"]))) &&
-			(isset($_POST["pword1"]) && (!empty($_POST["pword1"]))) &&
-			(isset($_POST["pword2"]) && (!empty($_POST["pword2"]))) &&			
-			(isset($_POST["screen"]) && (!empty($_POST["screen"]))) &&
-			(isset($_POST["bio"]) && (!empty($_POST["bio"]))) 
-			) 
-		{
-		}
-		else{
-			echo "<p>You haven't entered all information in the form.
-			<a href='registration.php'> Click here </a> to go back.</p>";
-			return;
-		}
-		//checking that there is an @ in the email address
-		if(preg_match("/\w+[@]\w+/", $email)) {
-			
-		}
-		else {
-			echo "<p> You have not entered email address in correct form. It is either empty or is missing the @ symbol. <a href='registration.php'> Click here </a> to enter a different one. </p>"; 
-			return;
-		}
-		//checking that both passwords match
-		if($_POST['pword1'] != $_POST['pword2'])
-		{
-			echo("Passwords do not match! <a href='registration.php'> Click here </a> to try again.");
-			return;
-		}
-		//This message prints if all checks have passed
+		//This message prints after all the checks have passed
 		echo("Registration successful. Welcome, $screen! <br />");
 		echo("Click <a href='login.php'> here </a> to log in.");
 
