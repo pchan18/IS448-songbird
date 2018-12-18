@@ -80,8 +80,9 @@
 			return;
 		}
 		//This message prints if all checks have passed
-		echo("Registration successful. Welcome, $screen!");
-		
+		echo("Registration successful. Welcome, $screen! <br />");
+		echo("Click <a href='login.php'> here </a> to log in.");
+
 		//protecting against HTML injection
 		$fname = htmlspecialchars($_POST["fname"]);
 		$lname = htmlspecialchars($_POST["lname"]);
