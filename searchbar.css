@@ -65,14 +65,14 @@ body{
 a.follow{
 	color:gray;
 }
-.follow:hover{
-	color:white;
-}
 
 .followBtn:hover{
 	background-color:gray;
 	color: white;
 	border: 5px white solid;
+}
+a.follow:hover{
+	color:white;
 }
 .navBtn{
 	padding: 3px;

@@ -56,7 +56,7 @@ $db = mysqli_connect("studentdb-maria.gl.umbc.edu","mrobe1","mrobe1","mrobe1");
 if(!$db) exit("Error - could not select database");
 
 ?>
-<button class="followBtn"><a href="follow_title.php">Follow</a></button>
+<button class="followBtn"><a class="follow" href="follow_title.php">Follow</a></button>
 <?php
 
 	$title = $_POST["title"];
