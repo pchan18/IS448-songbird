@@ -3,9 +3,9 @@
 window.onload=pageLoad;
 
 function pageLoad(){
-	document.getElementById("artist").onkeydown=upper;
-	document.getElementById("title").onkeydown=upper;
-	document.getElementById("user").onkeydown=upper;
+	document.getElementById("artist").onkeypress=upper;
+	document.getElementById("title").onkeypress=upper;
+	document.getElementById("user").onkeypress=upper;
 	
 	document.getElementById("artist").onblur=validateArtist;
 	document.getElementById("title").onblur=validateTitle;
