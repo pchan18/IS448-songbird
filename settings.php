@@ -36,8 +36,8 @@ if (isset($_COOKIE["Backgroundcolor"])){
 		<button class="navBtn"><a class="nav" href="justreviews.php">REVIEW</a></button>
 		<button class="navBtn"><a class="nav" href="submit.php">SUBMIT</a></button>
 		<button class="navBtn"><a class="nav" href="search.php">SEARCH</a></button>
-		<button class="navBtn"><a class="nav" href="logout.php"><span>LOGOUT</span></a></button>
 		<button class="currentBtn">PROFILE</button>
+		<button class="navBtn"><a class="nav" href="logout.php"><span>LOGOUT</span></a></button>
 	</div>
 
 	<div class="sideHead">
