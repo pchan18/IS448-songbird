@@ -23,9 +23,7 @@ function validate(){
 		var result1 = pattern1.test(profile);
 		var result2 = pattern2.test(profile);
 		var result3 = pattern3.test(profile);
-		alert(result1);
-		alert(result2);
-		alert(result3);
+		
 		
 	
 	
@@ -62,7 +60,6 @@ function showAvailable(){
 }
 
 function displayResult(ajax){
-	alert("success");
 	$("show").innerHTML = ajax.responseText;
 }
 function displayFailureMessage(){
